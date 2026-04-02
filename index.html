@@ -420,6 +420,9 @@
     <a class="sidebar-item" onclick="showTab('cs')">CS Process</a>
     <a class="sidebar-item" onclick="showTab('io')">IO & CSA</a>
 
+    <div class="sidebar-title">🇬🇧 UK Market</div>
+    <a class="sidebar-item" onclick="showTab('ukdeals')">UK Deals (HubSpot)</a>
+
     <div class="sidebar-title">📊 Knowledge</div>
     <a class="sidebar-item" onclick="showTab('knowledge')">Knowledge Check</a>
     <a class="sidebar-item" onclick="showTab('casestudies')">Case Studies</a>
@@ -747,6 +750,37 @@
         <div style="font-weight:700;color:#888">UK Rate Card</div>
         <div style="color:#666;line-height:1.3">Ask Rachel for latest</div>
         <span style="color:#666;font-weight:700;font-size:10px">Key Documents Slack ↗</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- AI RESEARCH & STRATEGY SKILLS -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div style="margin-bottom:32px;border-top:1px solid #333;padding-top:24px">
+    <div style="font-size:16px;font-weight:900;color:#FFD700;margin-bottom:16px;display:flex;align-items:center;gap:8px">🔍 Research & Strategy — AI Skills</div>
+    <div style="font-size:13px;color:#ccc;line-height:1.7;margin-bottom:16px">Use these prompts with Claude to instantly research brands, competitors, and deal history before pitches. Click any card to copy the prompt.</div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px">
+      <div style="background:#0d0d0d;border:1px solid #222;border-radius:10px;padding:16px;cursor:pointer" onclick="navigator.clipboard.writeText(this.querySelector('.prompt-text').textContent);this.style.borderColor='#28A745';setTimeout(()=>this.style.borderColor='#222',1500)">
+        <div style="color:#4A9EFF;font-weight:800;font-size:12px;margin-bottom:6px">🏢 BRAND FIT ANALYSIS</div>
+        <div class="prompt-text" style="font-size:12px;color:#ccc;line-height:1.6">Research [brand name] and give me 3 reasons why they'd be a good fit for Pubity Group's social channels. Include their audience, current social presence, and any recent campaigns.</div>
+        <div style="font-size:10px;color:#555;margin-top:8px">Click to copy</div>
+      </div>
+      <div style="background:#0d0d0d;border:1px solid #222;border-radius:10px;padding:16px;cursor:pointer" onclick="navigator.clipboard.writeText(this.querySelector('.prompt-text').textContent);this.style.borderColor='#28A745';setTimeout(()=>this.style.borderColor='#222',1500)">
+        <div style="color:#4A9EFF;font-weight:800;font-size:12px;margin-bottom:6px">🎯 COMPETITOR INTEL</div>
+        <div class="prompt-text" style="font-size:12px;color:#ccc;line-height:1.6">Who are [brand's] likely competitors and what kind of content are they putting out on social? I want to use this in my pitch.</div>
+        <div style="font-size:10px;color:#555;margin-top:8px">Click to copy</div>
+      </div>
+      <div style="background:#0d0d0d;border:1px solid #222;border-radius:10px;padding:16px;cursor:pointer" onclick="navigator.clipboard.writeText(this.querySelector('.prompt-text').textContent);this.style.borderColor='#28A745';setTimeout(()=>this.style.borderColor='#222',1500)">
+        <div style="color:#FFD700;font-weight:800;font-size:12px;margin-bottom:6px">📋 HUBSPOT CLIENT LOOKUP</div>
+        <div class="prompt-text" style="font-size:12px;color:#ccc;line-height:1.6">Look up [client name] on HubSpot and give me a summary of their deal history, pipeline value, and last contact date.</div>
+        <div style="font-size:10px;color:#555;margin-top:8px">Click to copy</div>
+      </div>
+      <div style="background:#0d0d0d;border:1px solid #222;border-radius:10px;padding:16px;cursor:pointer" onclick="navigator.clipboard.writeText(this.querySelector('.prompt-text').textContent);this.style.borderColor='#28A745';setTimeout(()=>this.style.borderColor='#222',1500)">
+        <div style="color:#FFD700;font-weight:800;font-size:12px;margin-bottom:6px">📊 MY OPEN DEALS CHECK</div>
+        <div class="prompt-text" style="font-size:12px;color:#ccc;line-height:1.6">Check HubSpot for any open deals assigned to me. List them by stage and flag anything that hasn't been updated in the last 14 days.</div>
+        <div style="font-size:10px;color:#555;margin-top:8px">Click to copy</div>
       </div>
     </div>
   </div>
@@ -5395,6 +5429,267 @@ function toggleAccount(event, card) {
       </div>
     </div>
     <textarea style="width:100%;min-height:100px;background:#111;border:1px solid #FFD70044;border-radius:10px;padding:14px;color:#ccc;font-size:13px;line-height:1.7;font-family:inherit;resize:vertical" placeholder="Seb — leave feedback, coaching points, or priorities for this section..." onchange="localStorage.setItem('seb-strategic',this.value)" id="seb-strategic"></textarea>
+  </div>
+</div>
+
+<!-- ══ UK DEALS (HUBSPOT) ══ -->
+<div id="tab-ukdeals" class="tab-pane">
+  <div class="sh"><h2>UK Deals — HubSpot Live Data</h2><p>All UK deals owned by Alex Sijpesteijn. 111 total deals across all stages. Data pulled directly from HubSpot CRM.</p></div>
+
+  <!-- Summary Stats -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:28px">
+    <div style="background:linear-gradient(135deg,#1a1a1a,#111);border:1px solid #28A74533;border-radius:12px;padding:18px;text-align:center">
+      <div style="font-size:28px;font-weight:900;color:#28A745">28</div>
+      <div style="font-size:11px;color:#888;margin-top:2px">Closed Won</div>
+      <div style="font-size:16px;font-weight:700;color:#28A745;margin-top:4px">£1,099,707</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#1a1a1a,#111);border:1px solid #4A9EFF33;border-radius:12px;padding:18px;text-align:center">
+      <div style="font-size:28px;font-weight:900;color:#4A9EFF">6</div>
+      <div style="font-size:11px;color:#888;margin-top:2px">Proposal Stage</div>
+      <div style="font-size:16px;font-weight:700;color:#4A9EFF;margin-top:4px">£1,150,000</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#1a1a1a,#111);border:1px solid #FF990033;border-radius:12px;padding:18px;text-align:center">
+      <div style="font-size:28px;font-weight:900;color:#FF9900">9</div>
+      <div style="font-size:11px;color:#888;margin-top:2px">Qualification</div>
+      <div style="font-size:16px;font-weight:700;color:#FF9900;margin-top:4px">£2,359,500</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#1a1a1a,#111);border:1px solid #FFD70033;border-radius:12px;padding:18px;text-align:center">
+      <div style="font-size:28px;font-weight:900;color:#FFD700">67</div>
+      <div style="font-size:11px;color:#888;margin-top:2px">Pipeline</div>
+      <div style="font-size:16px;font-weight:700;color:#FFD700;margin-top:4px">£14,022,778</div>
+    </div>
+  </div>
+
+  <!-- AI Skills Box -->
+  <div style="background:#111;border:1px solid #FFD70033;border-radius:12px;padding:20px;margin-bottom:24px">
+    <div style="font-size:14px;font-weight:900;color:#FFD700;margin-bottom:12px">🤖 HubSpot AI Skills — Ask Claude</div>
+    <div style="font-size:12px;color:#888;margin-bottom:12px">Copy any of these prompts and paste them to Claude to get live CRM insights:</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="background:#0d0d0d;border:1px solid #222;border-radius:8px;padding:12px;font-size:12px;color:#ccc;cursor:pointer" onclick="navigator.clipboard.writeText(this.querySelector('.prompt-text').textContent);this.style.borderColor='#28A745';setTimeout(()=>this.style.borderColor='#222',1500)">
+        <div style="color:#FFD700;font-weight:700;font-size:11px;margin-bottom:4px">📋 CLIENT LOOKUP</div>
+        <div class="prompt-text">Look up [client name] on HubSpot and give me a summary of their deal history, pipeline value, and last contact date.</div>
+        <div style="font-size:10px;color:#555;margin-top:4px">Click to copy</div>
+      </div>
+      <div style="background:#0d0d0d;border:1px solid #222;border-radius:8px;padding:12px;font-size:12px;color:#ccc;cursor:pointer" onclick="navigator.clipboard.writeText(this.querySelector('.prompt-text').textContent);this.style.borderColor='#28A745';setTimeout(()=>this.style.borderColor='#222',1500)">
+        <div style="color:#FFD700;font-weight:700;font-size:11px;margin-bottom:4px">📊 MY OPEN DEALS</div>
+        <div class="prompt-text">Check HubSpot for any open deals assigned to me. List them by stage and flag anything that hasn't been updated in the last 14 days.</div>
+        <div style="font-size:10px;color:#555;margin-top:4px">Click to copy</div>
+      </div>
+      <div style="background:#0d0d0d;border:1px solid #222;border-radius:8px;padding:12px;font-size:12px;color:#ccc;cursor:pointer" onclick="navigator.clipboard.writeText(this.querySelector('.prompt-text').textContent);this.style.borderColor='#28A745';setTimeout(()=>this.style.borderColor='#222',1500)">
+        <div style="color:#4A9EFF;font-weight:700;font-size:11px;margin-bottom:4px">🔍 BRAND RESEARCH</div>
+        <div class="prompt-text">Research [brand name] and give me 3 reasons why they'd be a good fit for Pubity Group's social channels. Include their audience, current social presence, and any recent campaigns.</div>
+        <div style="font-size:10px;color:#555;margin-top:4px">Click to copy</div>
+      </div>
+      <div style="background:#0d0d0d;border:1px solid #222;border-radius:8px;padding:12px;font-size:12px;color:#ccc;cursor:pointer" onclick="navigator.clipboard.writeText(this.querySelector('.prompt-text').textContent);this.style.borderColor='#28A745';setTimeout(()=>this.style.borderColor='#222',1500)">
+        <div style="color:#4A9EFF;font-weight:700;font-size:11px;margin-bottom:4px">🎯 COMPETITOR INTEL</div>
+        <div class="prompt-text">Who are [brand's] likely competitors and what kind of content are they putting out on social? I want to use this in my pitch.</div>
+        <div style="font-size:10px;color:#555;margin-top:4px">Click to copy</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSED WON DEALS -->
+  <div style="margin-bottom:24px">
+    <div style="font-size:15px;font-weight:900;color:#28A745;margin-bottom:12px;display:flex;align-items:center;gap:8px">✅ Closed Won — 28 Deals (£1,099,707)</div>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:11px;background:#111;border-radius:8px;overflow:hidden">
+        <thead><tr style="background:#1a1a1a;border-bottom:2px solid #28A74544">
+          <th style="padding:10px 12px;text-align:left;color:#28A745;font-weight:800">Deal Name</th>
+          <th style="padding:10px 12px;text-align:right;color:#28A745;font-weight:800">Amount</th>
+          <th style="padding:10px 12px;text-align:left;color:#28A745;font-weight:800">Close Date</th>
+          <th style="padding:10px 12px;text-align:left;color:#28A745;font-weight:800">Last Modified</th>
+        </tr></thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">L'Oreal: NYX x Simpsons</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£159,000</td><td style="padding:8px 12px;color:#888">2026-03-06</td><td style="padding:8px 12px;color:#888">2026-03-31</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Warner Bros: The Mummy</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£90,000</td><td style="padding:8px 12px;color:#888">2026-03-19</td><td style="padding:8px 12px;color:#888">2026-03-31</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">NFL: Super Bowl (UK)</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£75,000</td><td style="padding:8px 12px;color:#888">2026-01-30</td><td style="padding:8px 12px;color:#888">2026-03-31</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Vantara: Messi & Suarez</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">$70,000</td><td style="padding:8px 12px;color:#888">2025-12-17</td><td style="padding:8px 12px;color:#888">2026-03-31</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Paramount - Geordie Shore S26</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£50,449</td><td style="padding:8px 12px;color:#888">2026-01-06</td><td style="padding:8px 12px;color:#888">2026-03-27</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Vantara: Amplification</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">$47,500</td><td style="padding:8px 12px;color:#888">2025-09-16</td><td style="padding:8px 12px;color:#888">2026-03-11</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Adio/Sotheby's: Amplification</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£45,337</td><td style="padding:8px 12px;color:#888">2025-11-27</td><td style="padding:8px 12px;color:#888">2026-03-31</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Coca-Cola: Fanta Halloween</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">$45,000</td><td style="padding:8px 12px;color:#888">2025-07-25</td><td style="padding:8px 12px;color:#888">2026-03-13</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">META: AI Content</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£40,000</td><td style="padding:8px 12px;color:#888">2026-01-08</td><td style="padding:8px 12px;color:#888">2026-03-18</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Vantara: Messi @ Suarez 2</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">$40,000</td><td style="padding:8px 12px;color:#888">2025-12-18</td><td style="padding:8px 12px;color:#888">2026-03-31</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Universal: Super Mario Galaxy</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£35,000</td><td style="padding:8px 12px;color:#888">2026-02-19</td><td style="padding:8px 12px;color:#888">2026-03-18</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Universal: You Me & Tuscany</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£35,000</td><td style="padding:8px 12px;color:#888">2026-03-27</td><td style="padding:8px 12px;color:#888">2026-03-31</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Formula E: Mr. Beast - Amp</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£35,000</td><td style="padding:8px 12px;color:#888">2025-07-28</td><td style="padding:8px 12px;color:#888">2026-03-11</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Heineken: CL Event</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£30,000</td><td style="padding:8px 12px;color:#888">2026-01-28</td><td style="padding:8px 12px;color:#888">2026-03-27</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Google: Pixel Amp</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£30,000</td><td style="padding:8px 12px;color:#888">2025-11-24</td><td style="padding:8px 12px;color:#888">2026-03-31</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">2K: Borderlands</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£30,000</td><td style="padding:8px 12px;color:#888">2025-08-27</td><td style="padding:8px 12px;color:#888">2026-03-11</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Netflix TUDUM</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£30,000</td><td style="padding:8px 12px;color:#888">2025-07-28</td><td style="padding:8px 12px;color:#888">2026-03-11</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Paramount: Primate UK Q1</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£29,970</td><td style="padding:8px 12px;color:#888">2026-01-06</td><td style="padding:8px 12px;color:#888">2026-03-18</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Formula E - Driver Trailer</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£27,327</td><td style="padding:8px 12px;color:#888">2025-07-28</td><td style="padding:8px 12px;color:#888">2026-03-11</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Fanta: Limited Edition</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£26,000</td><td style="padding:8px 12px;color:#888">2025-06-28</td><td style="padding:8px 12px;color:#888">2026-03-11</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">McDonalds: Cards</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£25,000</td><td style="padding:8px 12px;color:#888">2026-02-24</td><td style="padding:8px 12px;color:#888">2026-03-30</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Malibu: Drink & Dive</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£20,000</td><td style="padding:8px 12px;color:#888">2025-07-25</td><td style="padding:8px 12px;color:#888">2026-03-11</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">UNVRS: Asteroid</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">€20,000</td><td style="padding:8px 12px;color:#888">2025-06-28</td><td style="padding:8px 12px;color:#888">2026-03-11</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Sony - PS5</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£19,125</td><td style="padding:8px 12px;color:#888">2025-11-10</td><td style="padding:8px 12px;color:#888">2026-03-27</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Whiskas: Super Bowl</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£15,000</td><td style="padding:8px 12px;color:#888">2025-06-28</td><td style="padding:8px 12px;color:#888">2026-03-11</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Perplexity: Lewis Hamilton</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£10,000</td><td style="padding:8px 12px;color:#888">2025-06-28</td><td style="padding:8px 12px;color:#888">2026-03-11</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Trainline: Discount Campaign</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£10,000</td><td style="padding:8px 12px;color:#888">2025-06-28</td><td style="padding:8px 12px;color:#888">2026-03-11</td></tr>
+          <tr><td style="padding:8px 12px;color:#ddd">Tombola</td><td style="padding:8px 12px;text-align:right;color:#28A745;font-weight:700">£10,000</td><td style="padding:8px 12px;color:#888">2025-11-17</td><td style="padding:8px 12px;color:#888">2026-03-27</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- PROPOSAL STAGE -->
+  <div style="margin-bottom:24px">
+    <div style="font-size:15px;font-weight:900;color:#4A9EFF;margin-bottom:12px;display:flex;align-items:center;gap:8px">📤 Proposal Stage — 6 Deals (£1,150,000)</div>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:11px;background:#111;border-radius:8px;overflow:hidden">
+        <thead><tr style="background:#1a1a1a;border-bottom:2px solid #4A9EFF44">
+          <th style="padding:10px 12px;text-align:left;color:#4A9EFF;font-weight:800">Deal Name</th>
+          <th style="padding:10px 12px;text-align:right;color:#4A9EFF;font-weight:800">Amount</th>
+          <th style="padding:10px 12px;text-align:left;color:#4A9EFF;font-weight:800">Close Date</th>
+          <th style="padding:10px 12px;text-align:left;color:#4A9EFF;font-weight:800">Probability</th>
+        </tr></thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Duelbits: World Cup</td><td style="padding:8px 12px;text-align:right;color:#4A9EFF;font-weight:700">£750,000</td><td style="padding:8px 12px;color:#888">2026-02-28</td><td style="padding:8px 12px;color:#FF9900">60%</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Muller: FRIJJ</td><td style="padding:8px 12px;text-align:right;color:#4A9EFF;font-weight:700">£125,000</td><td style="padding:8px 12px;color:#888">2026-01-31</td><td style="padding:8px 12px;color:#FF9900">60%</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Universal: Disclosure Day</td><td style="padding:8px 12px;text-align:right;color:#4A9EFF;font-weight:700">£115,000</td><td style="padding:8px 12px;color:#888">2026-02-28</td><td style="padding:8px 12px;color:#FF9900">60%</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Disney: Winnie The Pooh</td><td style="padding:8px 12px;text-align:right;color:#4A9EFF;font-weight:700">£75,000</td><td style="padding:8px 12px;color:#888">2026-04-10</td><td style="padding:8px 12px;color:#FF9900">60%</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">HBO: HODS3</td><td style="padding:8px 12px;text-align:right;color:#4A9EFF;font-weight:700">£50,000</td><td style="padding:8px 12px;color:#888">2026-03-31</td><td style="padding:8px 12px;color:#FF9900">60%</td></tr>
+          <tr><td style="padding:8px 12px;color:#ddd">Universal: Finding Emily</td><td style="padding:8px 12px;text-align:right;color:#4A9EFF;font-weight:700">£35,000</td><td style="padding:8px 12px;color:#888">2026-02-28</td><td style="padding:8px 12px;color:#FF9900">60%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- QUALIFICATION STAGE -->
+  <div style="margin-bottom:24px">
+    <div style="font-size:15px;font-weight:900;color:#FF9900;margin-bottom:12px;display:flex;align-items:center;gap:8px">🔥 Qualification — 9 Deals (£2,359,500)</div>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:11px;background:#111;border-radius:8px;overflow:hidden">
+        <thead><tr style="background:#1a1a1a;border-bottom:2px solid #FF990044">
+          <th style="padding:10px 12px;text-align:left;color:#FF9900;font-weight:800">Deal Name</th>
+          <th style="padding:10px 12px;text-align:right;color:#FF9900;font-weight:800">Amount</th>
+          <th style="padding:10px 12px;text-align:left;color:#FF9900;font-weight:800">Close Date</th>
+          <th style="padding:10px 12px;text-align:left;color:#FF9900;font-weight:800">Probability</th>
+        </tr></thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Visit Abu Dhabi: FY 26</td><td style="padding:8px 12px;text-align:right;color:#FF9900;font-weight:700">$1,200,000</td><td style="padding:8px 12px;color:#888">2025-12-31</td><td style="padding:8px 12px;color:#FF9900">40%</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Muller: Corner Collab</td><td style="padding:8px 12px;text-align:right;color:#FF9900;font-weight:700">£280,000</td><td style="padding:8px 12px;color:#888">2026-03-31</td><td style="padding:8px 12px;color:#FF9900">40%</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Britvic: Tango</td><td style="padding:8px 12px;text-align:right;color:#FF9900;font-weight:700">£270,000</td><td style="padding:8px 12px;color:#888">2026-03-31</td><td style="padding:8px 12px;color:#FF9900">40%</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Carlsberg: ICD</td><td style="padding:8px 12px;text-align:right;color:#FF9900;font-weight:700">£218,000</td><td style="padding:8px 12px;color:#888">2026-03-31</td><td style="padding:8px 12px;color:#FF9900">40%</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">IRN Bru: Maverick</td><td style="padding:8px 12px;text-align:right;color:#FF9900;font-weight:700">£180,000</td><td style="padding:8px 12px;color:#888">2026-01-31</td><td style="padding:8px 12px;color:#FF9900">40%</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Universal: Odyssey</td><td style="padding:8px 12px;text-align:right;color:#FF9900;font-weight:700">£70,000</td><td style="padding:8px 12px;color:#888">2026-03-20</td><td style="padding:8px 12px;color:#FF9900">40%</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Warner Bros: Supergirl</td><td style="padding:8px 12px;text-align:right;color:#FF9900;font-weight:700">£57,000</td><td style="padding:8px 12px;color:#888">2026-03-27</td><td style="padding:8px 12px;color:#FF9900">40%</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Goodwoof</td><td style="padding:8px 12px;text-align:right;color:#FF9900;font-weight:700">£55,000</td><td style="padding:8px 12px;color:#888">2026-03-31</td><td style="padding:8px 12px;color:#FF9900">40%</td></tr>
+          <tr><td style="padding:8px 12px;color:#ddd">Paramount: Jackass</td><td style="padding:8px 12px;text-align:right;color:#FF9900;font-weight:700">£29,500</td><td style="padding:8px 12px;color:#888">2026-03-31</td><td style="padding:8px 12px;color:#FF9900">40%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TOP PIPELINE DEALS -->
+  <div style="margin-bottom:24px">
+    <div style="font-size:15px;font-weight:900;color:#FFD700;margin-bottom:12px;display:flex;align-items:center;gap:8px">📋 Pipeline — Top 30 Deals (67 total)</div>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:11px;background:#111;border-radius:8px;overflow:hidden">
+        <thead><tr style="background:#1a1a1a;border-bottom:2px solid #FFD70044">
+          <th style="padding:10px 12px;text-align:left;color:#FFD700;font-weight:800">Deal Name</th>
+          <th style="padding:10px 12px;text-align:right;color:#FFD700;font-weight:800">Amount</th>
+          <th style="padding:10px 12px;text-align:left;color:#FFD700;font-weight:800">Close Date</th>
+          <th style="padding:10px 12px;text-align:left;color:#FFD700;font-weight:800">Next Step</th>
+        </tr></thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Pure Gym: Feel Good</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£918,918</td><td style="padding:8px 12px;color:#888">2025-10-15</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Lynx World Cup</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£900,000</td><td style="padding:8px 12px;color:#888">2026-03-09</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Pedigree: Superman & Krypto</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£840,050</td><td style="padding:8px 12px;color:#888">2025-05-02</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">ITV: Full Year 26'</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£760,000</td><td style="padding:8px 12px;color:#888">2026-03-25</td><td style="padding:8px 12px;color:#666;font-size:10px">-</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Sure - World Cup</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£620,000</td><td style="padding:8px 12px;color:#888">2026-03-09</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Unilever: Dove</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£540,000</td><td style="padding:8px 12px;color:#888">2026-03-09</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Lego: She Build It</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£500,000</td><td style="padding:8px 12px;color:#888">2025-05-22</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Kellogs: Cheez It's</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£484,480</td><td style="padding:8px 12px;color:#888">2025-04-09</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Britvic: J20</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£462,500</td><td style="padding:8px 12px;color:#888">2026-03-24</td><td style="padding:8px 12px;color:#666;font-size:10px">-</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Peparami: FY 2026</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£405,000</td><td style="padding:8px 12px;color:#888">2026-03-17</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Ladbrokes: World Cup</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£400,000</td><td style="padding:8px 12px;color:#888">2026-03-09</td><td style="padding:8px 12px;color:#666;font-size:10px">Share brief response</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Rowntrees Ice Lollies</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£400,000</td><td style="padding:8px 12px;color:#888">2025-11-05</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Unilever: Pot Noodle</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£320,000</td><td style="padding:8px 12px;color:#888">2025-06-28</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">CeraVe: Skin Care</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£318,000</td><td style="padding:8px 12px;color:#888">2025-02-19</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Bacardi: Learn From The Greats</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£300,000</td><td style="padding:8px 12px;color:#888">2025-07-31</td><td style="padding:8px 12px;color:#666;font-size:10px">Respond to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Pure Gym: Here For It</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£268,421</td><td style="padding:8px 12px;color:#888">2025-07-11</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Absolut: Cool Campaign</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£262,500</td><td style="padding:8px 12px;color:#888">2025-06-28</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Tango: Cash Dash</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£233,750</td><td style="padding:8px 12px;color:#888">2025-06-28</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Nicorette Total Quit</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£212,500</td><td style="padding:8px 12px;color:#888">2025-11-20</td><td style="padding:8px 12px;color:#666;font-size:10px">-</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">OmniGOV: VAWG</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£200,000</td><td style="padding:8px 12px;color:#888">2025-12-10</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Mondelez: Twirl</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£200,000</td><td style="padding:8px 12px;color:#888">2026-03-06</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">TUI: AI Campaign</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£200,000</td><td style="padding:8px 12px;color:#888">2026-03-09</td><td style="padding:8px 12px;color:#666;font-size:10px">-</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">DWP - Benefit Fraud</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£185,000</td><td style="padding:8px 12px;color:#888">2025-12-01</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Boost - 2026</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£175,000</td><td style="padding:8px 12px;color:#888">2026-01-27</td><td style="padding:8px 12px;color:#666;font-size:10px">Waiting for agency</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Nutella Pancake Day</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£174,000</td><td style="padding:8px 12px;color:#888">2025-12-11</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">The AA - News Storm</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£165,000</td><td style="padding:8px 12px;color:#888">2026-02-26</td><td style="padding:8px 12px;color:#666;font-size:10px">Waiting for agency</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Visit Ras Al Khaima</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">$160,000</td><td style="padding:8px 12px;color:#888">2025-09-05</td><td style="padding:8px 12px;color:#666;font-size:10px">Waiting for agency</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">BBC: Youth Q126</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£150,000</td><td style="padding:8px 12px;color:#888">2026-03-11</td><td style="padding:8px 12px;color:#666;font-size:10px">-</td></tr>
+          <tr style="border-bottom:1px solid #222"><td style="padding:8px 12px;color:#ddd">Heinz: World Cup</td><td style="padding:8px 12px;text-align:right;color:#FFD700;font-weight:700">£150,000</td><td style="padding:8px 12px;color:#888">2026-01-15</td><td style="padding:8px 12px;color:#666;font-size:10px">Responding to Brief</td></tr>
+          <tr><td style="padding:8px 12px;color:#ddd">+ 37 more pipeline deals...</td><td style="padding:8px 12px;text-align:right;color:#666">Various</td><td style="padding:8px 12px;color:#666">-</td><td style="padding:8px 12px;color:#666;font-size:10px">-</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Top UK Clients by Brand -->
+  <div style="margin-bottom:24px">
+    <div style="font-size:15px;font-weight:900;color:#FFD700;margin-bottom:12px">🏢 Key UK Brand Relationships</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px">
+      <div style="background:#111;border:1px solid #222;border-radius:10px;padding:14px;border-left:3px solid #28A745">
+        <div style="font-weight:900;color:#ddd;font-size:13px">Universal Pictures</div>
+        <div style="font-size:11px;color:#888;margin-top:4px">8 deals | Super Mario, Finding Emily, Odyssey, You Me & Tuscany, Disclosure Day, Michael, Asteroid, Song Sung Blue</div>
+        <div style="font-size:12px;color:#28A745;font-weight:700;margin-top:6px">Mix of closed won + pipeline</div>
+      </div>
+      <div style="background:#111;border:1px solid #222;border-radius:10px;padding:14px;border-left:3px solid #28A745">
+        <div style="font-weight:900;color:#ddd;font-size:13px">Warner Bros</div>
+        <div style="font-size:11px;color:#888;margin-top:4px">4 deals | The Mummy (won), Supergirl, The Bride, TWKY</div>
+        <div style="font-size:12px;color:#4A9EFF;font-weight:700;margin-top:6px">£225,250 total value</div>
+      </div>
+      <div style="background:#111;border:1px solid #222;border-radius:10px;padding:14px;border-left:3px solid #FFD700">
+        <div style="font-weight:900;color:#ddd;font-size:13px">Paramount</div>
+        <div style="font-size:11px;color:#888;margin-top:4px">4 deals | Geordie Shore (won), Primate (won), Scream 7, Jackass</div>
+        <div style="font-size:12px;color:#28A745;font-weight:700;margin-top:6px">£145,177 total value</div>
+      </div>
+      <div style="background:#111;border:1px solid #222;border-radius:10px;padding:14px;border-left:3px solid #FFD700">
+        <div style="font-weight:900;color:#ddd;font-size:13px">Unilever</div>
+        <div style="font-size:11px;color:#888;margin-top:4px">5 deals | Dove, Pot Noodle, Lynx World Cup, Lynx Body Spray, Sure World Cup</div>
+        <div style="font-size:12px;color:#FFD700;font-weight:700;margin-top:6px">£3,035,000 pipeline</div>
+      </div>
+      <div style="background:#111;border:1px solid #222;border-radius:10px;padding:14px;border-left:3px solid #FFD700">
+        <div style="font-weight:900;color:#ddd;font-size:13px">Coca-Cola</div>
+        <div style="font-size:11px;color:#888;margin-top:4px">4 deals | Fanta Halloween (won), Dr. Pepper, ICHT, Fanta Ltd Edition (won)</div>
+        <div style="font-size:12px;color:#28A745;font-weight:700;margin-top:6px">£186,000 total value</div>
+      </div>
+      <div style="background:#111;border:1px solid #222;border-radius:10px;padding:14px;border-left:3px solid #FFD700">
+        <div style="font-weight:900;color:#ddd;font-size:13px">Britvic</div>
+        <div style="font-size:11px;color:#888;margin-top:4px">3 deals | J20, Tango, Tango Cash Dash</div>
+        <div style="font-size:12px;color:#FFD700;font-weight:700;margin-top:6px">£966,250 pipeline</div>
+      </div>
+      <div style="background:#111;border:1px solid #222;border-radius:10px;padding:14px;border-left:3px solid #4A9EFF">
+        <div style="font-weight:900;color:#ddd;font-size:13px">Formula E</div>
+        <div style="font-size:11px;color:#888;margin-top:4px">4 deals | Mr. Beast (won), Driver Trailer (won), Extended Network, Evo Sessions</div>
+        <div style="font-size:12px;color:#28A745;font-weight:700;margin-top:6px">£117,327 total value</div>
+      </div>
+      <div style="background:#111;border:1px solid #222;border-radius:10px;padding:14px;border-left:3px solid #4A9EFF">
+        <div style="font-weight:900;color:#ddd;font-size:13px">Visit Abu Dhabi</div>
+        <div style="font-size:11px;color:#888;margin-top:4px">3 deals | FY 26 Campaign ($1.2M), Museums ($150K), $75K deal</div>
+        <div style="font-size:12px;color:#FF9900;font-weight:700;margin-top:6px">$1,425,000 total value</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#0d0d0d;border:1px solid #FFD70033;border-radius:10px;padding:16px;text-align:center;font-size:13px;color:#aaa;margin-bottom:24px">
+    Data source: HubSpot CRM | Owner: Alex Sijpesteijn (ID: 76002297) | Last synced: April 2026
+  </div>
+
+  <!-- SEB FEEDBACK -->
+  <div style="border-top:2px solid #FFD700;margin-top:32px;padding-top:24px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+      <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#FFD700,#FF9900);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#000;flex-shrink:0">S</div>
+      <div>
+        <div style="font-size:14px;font-weight:900;color:#FFD700">Seb's Feedback</div>
+        <div style="font-size:11px;color:#666">Manager notes & coaching points for this section</div>
+      </div>
+    </div>
+    <textarea style="width:100%;min-height:100px;background:#111;border:1px solid #FFD70044;border-radius:10px;padding:14px;color:#ccc;font-size:13px;line-height:1.7;font-family:inherit;resize:vertical" placeholder="Seb — leave feedback, coaching points, or priorities for this section..." onchange="localStorage.setItem('seb-ukdeals',this.value)" id="seb-ukdeals"></textarea>
   </div>
 </div>
 
