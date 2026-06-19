@@ -493,6 +493,25 @@
   body.light-mode #theme-toggle{background:none;border-color:var(--br);color:var(--m)}
   body.light-mode #theme-toggle:hover{border-color:var(--y)}
   body.light-mode .crm-explain{color:var(--text-secondary)}
+
+  /* ── SEARCH BAR ── */
+  #search-wrap{position:relative;margin-top:10px;margin-bottom:2px}
+  #search-input{width:100%;background:var(--c);border:1px solid var(--br);color:var(--text);border-radius:8px;padding:8px 14px 8px 34px;font-size:13px;font-family:inherit;outline:none;transition:border-color .2s}
+  #search-input:focus{border-color:var(--y)}
+  #search-input::placeholder{color:var(--m)}
+  #search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--m);pointer-events:none}
+  #search-results{position:absolute;top:100%;left:0;right:0;background:var(--c);border:1px solid var(--br);border-top:none;border-radius:0 0 10px 10px;max-height:320px;overflow-y:auto;z-index:200;display:none;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+  #search-results.active{display:block}
+  .sr-item{padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--br);transition:background .15s;display:flex;align-items:flex-start;gap:10px}
+  .sr-item:last-child{border-bottom:none}
+  .sr-item:hover{background:rgba(255,215,0,.06)}
+  .sr-item-tab{font-size:9px;font-weight:800;letter-spacing:.5px;color:var(--y);background:rgba(255,215,0,.1);padding:2px 6px;border-radius:4px;white-space:nowrap;margin-top:2px;flex-shrink:0}
+  .sr-item-text{font-size:13px;color:var(--text-secondary);line-height:1.4}
+  .sr-item-text mark{background:rgba(255,215,0,.25);color:var(--text);border-radius:2px;padding:0 1px}
+  .sr-empty{padding:14px;text-align:center;font-size:13px;color:var(--m)}
+  body.light-mode #search-input{background:var(--c);border-color:var(--br);color:var(--text)}
+  body.light-mode #search-results{background:var(--c);border-color:var(--br);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+  body.light-mode .sr-item:hover{background:rgba(184,150,15,.06)}
 </style>
 </head>
 <body>
@@ -546,6 +565,11 @@
         <span id="pb-num">0/46</span>
       </div>
     </div>
+  </div>
+  <div id="search-wrap">
+    <span id="search-icon">🔍</span>
+    <input type="text" id="search-input" placeholder="Search docs, tools, links, sections..." autocomplete="off" oninput="handleSearch(this.value)" onfocus="if(this.value.length>=2)document.getElementById('search-results').classList.add('active')" />
+    <div id="search-results"></div>
   </div>
   <div id="tabs">
     <button class="tab-btn active" onclick="showTab('dochub')">🏠 Documents Hub</button>
@@ -5744,6 +5768,100 @@ function checkSavedRegion(){
     updateRegionBadge();
   }
 }
+
+// ── SEARCH ──
+function buildSearchIndex(){
+  const index=[];
+  // Index all doc-cards (links on home page and throughout)
+  document.querySelectorAll('.doc-card').forEach(el=>{
+    const name=el.querySelector('.doc-card-name');
+    const desc=el.querySelector('.doc-card-desc');
+    const type=el.querySelector('.doc-card-type');
+    const href=el.getAttribute('href')||'';
+    const pane=el.closest('.tab-pane');
+    const tabId=pane?pane.id.replace('tab-',''):'dochub';
+    const tabName=getTabLabel(tabId);
+    if(name){
+      index.push({text:(name.textContent||'')+' '+(desc?desc.textContent:'')+(type?' '+type.textContent:''),title:name.textContent||'',desc:desc?desc.textContent:'',tab:tabId,tabName:tabName,href:href,type:'link'});
+    }
+  });
+  // Index section headers
+  document.querySelectorAll('.lbl-section').forEach(el=>{
+    const pane=el.closest('.tab-pane');
+    const tabId=pane?pane.id.replace('tab-',''):'dochub';
+    const tabName=getTabLabel(tabId);
+    const id=el.id||'';
+    index.push({text:el.textContent||'',title:el.textContent||'',desc:'Section',tab:tabId,tabName:tabName,anchorId:id,type:'section'});
+  });
+  // Index tab pane headings
+  document.querySelectorAll('.sh h2').forEach(el=>{
+    const pane=el.closest('.tab-pane');
+    const tabId=pane?pane.id.replace('tab-',''):'';
+    const tabName=getTabLabel(tabId);
+    index.push({text:el.textContent||'',title:el.textContent||'',desc:'Tab',tab:tabId,tabName:tabName,type:'tab'});
+  });
+  // Index cards
+  document.querySelectorAll('.card-head').forEach(el=>{
+    const titleEl=el.querySelector('[style*="font-weight:800"]')||el.querySelector('div');
+    const pane=el.closest('.tab-pane');
+    const tabId=pane?pane.id.replace('tab-',''):'';
+    const tabName=getTabLabel(tabId);
+    if(titleEl)index.push({text:titleEl.textContent||'',title:titleEl.textContent||'',desc:'Expandable card',tab:tabId,tabName:tabName,type:'card'});
+  });
+  // Index checklist items
+  document.querySelectorAll('.cl-label, .wk-label').forEach(el=>{
+    const pane=el.closest('.tab-pane');
+    const tabId=pane?pane.id.replace('tab-',''):'';
+    const tabName=getTabLabel(tabId);
+    index.push({text:el.textContent||'',title:el.textContent||'',desc:'Checklist item',tab:tabId,tabName:tabName,type:'checklist'});
+  });
+  return index;
+}
+function getTabLabel(id){
+  const map={dochub:'Documents Hub',timeline:'Timeline',sales:'Sales Process',cs:'CS Process',product:'Product & Pages',casestudies:'Case Studies',team:'Team',finance:'Finance',media:'Media Planning',knowledge:'Knowledge Check',checklist:'Checklist',io:'IO & CSA',weekly:'Weekly Checklist',wow:'Ways of Working',demopro:'Demographics Pro',decks:'Pitch Decks',processes:'Processes & Docs',strategic:'Strategic Accounts'};
+  return map[id]||id;
+}
+let searchIndex=[];
+function handleSearch(q){
+  const results=document.getElementById('search-results');
+  if(q.length<2){results.classList.remove('active');results.innerHTML='';return;}
+  if(!searchIndex.length)searchIndex=buildSearchIndex();
+  const terms=q.toLowerCase().split(/\s+/).filter(t=>t.length>0);
+  const matches=searchIndex.filter(item=>{
+    const t=item.text.toLowerCase();
+    return terms.every(term=>t.includes(term));
+  }).slice(0,12);
+  if(!matches.length){
+    results.innerHTML='<div class="sr-empty">No results found</div>';
+    results.classList.add('active');return;
+  }
+  results.innerHTML=matches.map(m=>{
+    let display=m.title;
+    // highlight matched terms
+    terms.forEach(term=>{
+      const re=new RegExp('('+term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+      display=display.replace(re,'<mark>$1</mark>');
+    });
+    const descHtml=m.desc?'<div style="font-size:11px;color:var(--m);margin-top:2px">'+m.desc+'</div>':'';
+    return '<div class="sr-item" onclick="searchGo(\''+m.tab+'\',\''+( m.anchorId||'')+'\',\''+(m.href||'').replace(/'/g,"\\'")+'\')"><span class="sr-item-tab">'+m.tabName+'</span><div class="sr-item-text">'+display+descHtml+'</div></div>';
+  }).join('');
+  results.classList.add('active');
+}
+function searchGo(tab,anchorId,href){
+  document.getElementById('search-results').classList.remove('active');
+  document.getElementById('search-input').value='';
+  if(tab)showTab(tab);
+  setTimeout(()=>{
+    if(anchorId){const el=document.getElementById(anchorId);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
+  },150);
+}
+// Close search results on click outside
+document.addEventListener('click',e=>{
+  const wrap=document.getElementById('search-wrap');
+  if(wrap&&!wrap.contains(e.target)){
+    document.getElementById('search-results').classList.remove('active');
+  }
+});
 
 // ── THEME ──
 function toggleTheme(){
