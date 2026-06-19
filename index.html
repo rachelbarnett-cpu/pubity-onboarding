@@ -5352,31 +5352,57 @@ function renderObjections(){
 
 // ── TEAM ──
 const TEAM=[
-  {name:'Kit Chilvers',role:'Co-founder & CEO',go:'Overall company direction and major strategic decisions.'},
-  {name:'Iyrah Williams',role:'Chief Content Officer',go:'Content strategy and editorial direction across all pages.'},
-  {name:'Seb Rossi',role:'VP Commercial',go:'Strategy sign-off. Loop in for strategic clients or deals over £250k.'},
-  {name:'Alex Giacon',role:'Creative VP',go:'Complex deal sign-off, escalations above £250k, restricted category approval.'},
-  {name:'Alexandra Greenwald',role:'Head of Industry, Brand Partnerships',go:'Industry strategy and senior brand partnership development.'},
-  {name:'Alex S (Sijpesteijn)',role:'UK Seller',go:'UK client context, PepsiCo UK, Sky, Google Pixel. Your closest sales partner.'},
-  {name:'Myles Chilvers',role:'US Seller (Tech / Gaming)',go:'ZoomInfo best practices, Claude tips, industry intel. Best person to shadow for outreach.'},
-  {name:'Alicia Scott',role:'Account Director, Client Services',go:'CS escalations and senior client delivery queries.'},
-  {name:'Harriet Killen',role:'CS Lead',go:'Campaign delivery, wrap reports, client satisfaction.'},
-  {name:'Rhea Cheshire',role:'CS Ops',go:'Monday.com, project setup, process queries, Springboard.'},
-  {name:'Josiah Campbell',role:'Creative Solutions Manager',go:'Creative direction on briefs under £250k, daily stand-up questions.'},
-  {name:'Raphael Tekenah',role:'Creative Solutions Executive',go:'Creative brief support and concept development.'},
-  {name:'Ben Armson',role:'Senior Creative',go:'Creative output and content quality.'},
-  {name:'Michael Teather',role:'Head of Design',go:'Design assets and visual identity.'},
-  {name:'Will Bartholomew',role:'Media Planner',go:'Media plan building, forecast tool. YOU post the screenshot, not Will.'},
-  {name:'Leanne Farleigh',role:'Production Lead',go:'Shoot logistics, production budgets, timelines.'},
-  {name:'Rachel Barnett',role:'Sales Account Manager',go:'HubSpot, IO/NCF, deal admin, Slack channel setup, SharePoint, finance. ADD to ALL proposal Slacks.'},
-  {name:'Hugo E',role:'Profile + Setup',go:'Profile picture, job description setup, WhatsApp group access, Pubity Self-Service walkthrough.'},
-  {name:'Josh KL',role:'Revenue Ops',go:'HubSpot issues, CRM fields, automations, reporting dashboards.'},
-  {name:'Elisabeth Tylee (Lizzy)',role:'People & Office Operations',go:'HR, onboarding admin, office queries.'},
+  // LEADERSHIP
+  {dept:'LEADERSHIP',name:'Kit Chilvers',role:'Co-founder & CEO',go:'Overall company direction and major strategic decisions.'},
+  {dept:'LEADERSHIP',name:'Iyrah Williams',role:'Chief Content Officer',go:'Content strategy and editorial direction across all pages.'},
+  // VP COMMERCIAL & STUDIO
+  {dept:'VP COMMERCIAL & STUDIO',name:'Seb Rossi',role:'VP Commercial',go:'Strategy sign-off. Loop in for strategic clients or deals over £250k.'},
+  {dept:'VP COMMERCIAL & STUDIO',name:'Alex Giacon',role:'SVP, Studio',go:'Complex deal sign-off, escalations above £250k, restricted category approval.'},
+  // SALES
+  {dept:'SALES',name:'Alexandra Greenwald',role:'Head of Industry, Brand Partnerships',go:'Industry strategy and senior brand partnership development. US market.'},
+  {dept:'SALES',name:'Nina Kammer',role:'Head of Industry, Brand Partnerships',go:'Industry strategy and senior brand partnership development. US market.'},
+  {dept:'SALES',name:'Dustin Thaler',role:'Senior Director, Brand Partnerships',go:'Senior sales leadership. US market.'},
+  {dept:'SALES',name:'Giselle Gelipter',role:'Director of Brand Partnerships, EMEA',go:'UK/EMEA sales leadership and brand partnership strategy.'},
+  {dept:'SALES',name:'Myles Chilvers',role:'Brand Partnerships Manager',go:'ZoomInfo best practices, Claude tips, industry intel. Great person to shadow for outreach.'},
+  {dept:'SALES',name:'Alex Sijpesteijn',role:'Partnerships Director',go:'UK client context and partnership development.'},
+  {dept:'SALES',name:'Rachel Barnett',role:'Brand Partnerships Account Manager',go:'HubSpot, IO/NCF, deal admin, Slack channel setup, SharePoint, finance. ADD to ALL proposal Slacks.'},
+  // CREATIVE SOLUTIONS
+  {dept:'CREATIVE SOLUTIONS',name:'Josiah Campbell',role:'Creative Solutions Account Director',go:'Creative direction on briefs, daily stand-up questions.'},
+  {dept:'CREATIVE SOLUTIONS',name:'Aya Srour',role:'Sr. Creative Solutions Executive',go:'Creative brief support and concept development.'},
+  {dept:'CREATIVE SOLUTIONS',name:'Raphael Tekenah',role:'Creative Solutions Executive',go:'Creative brief support and concept development.'},
+  // CREATIVE
+  {dept:'CREATIVE',name:'Ollie',role:'Creative Director',go:'Creative direction, content quality, and creative team leadership.'},
+  {dept:'CREATIVE',name:'Ben Armson',role:'Senior Creative',go:'Creative output and content quality.'},
+  {dept:'CREATIVE',name:'Frank Lawler',role:'Senior Creative',go:'Creative output and content quality.'},
+  {dept:'CREATIVE',name:'Tihana',role:'Junior Creative',go:'Creative support and content production.'},
+  // CLIENT SERVICES
+  {dept:'CLIENT SERVICES',name:'Harriet Killen',role:'Group Account Director',go:'Senior CS escalations and client delivery leadership.'},
+  {dept:'CLIENT SERVICES',name:'Rhea Cheshire',role:'Group Account Director, Client Services',go:'Campaign delivery, client satisfaction, CS leadership.'},
+  {dept:'CLIENT SERVICES',name:'Alicia Scott',role:'Account Director, Client Services',go:'CS escalations and senior client delivery queries.'},
+  {dept:'CLIENT SERVICES',name:'Amanda Kaye',role:'Client Services',go:'Campaign delivery and client management.'},
+  {dept:'CLIENT SERVICES',name:'Charlie Peters',role:'Account Manager',go:'Campaign delivery and client management.'},
+  {dept:'CLIENT SERVICES',name:'Becky Robinson',role:'Account Manager',go:'Campaign delivery and client management.'},
+  {dept:'CLIENT SERVICES',name:'Krystal Glenn',role:'Account Manager',go:'Campaign delivery and client management.'},
+  // PRODUCTION
+  {dept:'PRODUCTION',name:'Leanne Farleigh',role:'Head of Commercial Production',go:'Shoot logistics, production budgets, timelines.'},
+  {dept:'PRODUCTION',name:'Anna Boylan',role:'Senior Producer',go:'Production support, shoot coordination, and delivery.'},
+  // DESIGN
+  {dept:'DESIGN',name:'Michael Teather',role:'Head of Design',go:'Design assets and visual identity.'},
+  // SUPPORT & OPERATIONS
+  {dept:'SUPPORT & OPERATIONS',name:'Will Bartholomew',role:'Media Planning',go:'Media plan building, forecast tool. YOU post the screenshot, not Will.'},
+  {dept:'SUPPORT & OPERATIONS',name:'Hugo Ezimora',role:'Head of IT',go:'IT setup, tech issues, system access.'},
+  {dept:'SUPPORT & OPERATIONS',name:'Joshua Kobe Leonardo',role:'Revenue Operations Executive',go:'HubSpot issues, CRM fields, automations, reporting dashboards.'},
+  {dept:'SUPPORT & OPERATIONS',name:'Elisabeth Tylee',role:'People & Office Operations Coordinator',go:'HR, onboarding admin, office queries.'},
 ];
 
 function renderTeam(){
   const el=document.getElementById('team-list');
-  el.innerHTML=TEAM.map(t=>`<div class="team-row"><div><div class="team-name">${t.name}</div><div class="team-role">${t.role}</div></div><div class="team-go">${t.go}</div></div>`).join('');
+  let html='';let curDept='';
+  TEAM.forEach(t=>{
+    if(t.dept!==curDept){curDept=t.dept;html+=`<div class="lbl-section" style="margin-top:${html?'20':'0'}px;margin-bottom:8px">${curDept}</div>`;}
+    html+=`<div class="team-row"><div><div class="team-name">${t.name}</div><div class="team-role">${t.role}</div></div><div class="team-go">${t.go}</div></div>`;
+  });
+  el.innerHTML=html;
 }
 
 // ── KNOWLEDGE CHECK ──
