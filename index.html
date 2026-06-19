@@ -435,6 +435,7 @@
     <button class="tab-btn" onclick="showTab('demopro')">🔬 Demographics Pro</button>
     <button class="tab-btn" onclick="showTab('decks')">🎨 Pitch Decks</button>
     <button class="tab-btn" onclick="showTab('processes')">📂 Processes & Docs</button>
+    <button class="tab-btn" onclick="showTab('dochub')">🏠 Documents Hub</button>
     <button class="tab-btn" onclick="showTab('strategic')">🎯 Strategic Accounts</button>
   </div>
 </div>
@@ -723,10 +724,10 @@
             <div style="font-size:10px;font-weight:800;color:#555;background:#111;padding:3px 8px;border-radius:4px;white-space:nowrap">SALES STEP 01</div>
           </div>
           <div style="font-size:12px;color:#aaa;margin-top:10px;line-height:1.7">
-            You've identified a target account and started outreach. <strong style="color:#ddd">Create the deal now</strong> — don't wait until the meeting is booked.
+            You've identified a target account and started outreach. <strong style="color:#ddd">Create the deal in <a href="https://deals.pubitypgl.com/create" target="_blank">Deal Manager</a> now</strong> — don't wait until the meeting is booked. It will automatically appear in HubSpot.
           </div>
           <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:6px;margin-top:10px">
-            <div style="background:#111;border-left:2px solid var(--y);padding:6px 10px;border-radius:0 6px 6px 0;font-size:11px;color:#ccc">📌 Create deal in HubSpot</div>
+            <div style="background:#111;border-left:2px solid var(--y);padding:6px 10px;border-radius:0 6px 6px 0;font-size:11px;color:#ccc">📌 Create deal in <a href="https://deals.pubitypgl.com/create" target="_blank" style="color:var(--y)">Deal Manager</a></div>
             <div style="background:#111;border-left:2px solid var(--y);padding:6px 10px;border-radius:0 6px 6px 0;font-size:11px;color:#ccc">🏷️ Name: <em style="color:#888">Brand — Product — Year</em></div>
             <div style="background:#111;border-left:2px solid var(--y);padding:6px 10px;border-radius:0 6px 6px 0;font-size:11px;color:#ccc">🏢 Associate company + contact</div>
             <div style="background:#111;border-left:2px solid var(--y);padding:6px 10px;border-radius:0 6px 6px 0;font-size:11px;color:#ccc">💷 Set estimated deal value</div>
@@ -910,9 +911,9 @@
     </div>
 
     <div style="background:#111;border:1px solid #FFD70033;border-radius:10px;padding:12px 16px;margin-bottom:24px;font-size:12px;color:#aaa;line-height:1.8">
-      <strong style="color:var(--y)">HubSpot hygiene rules:</strong>
+      <strong style="color:var(--y)">Deal & pipeline hygiene rules:</strong>
       <div style="margin-top:6px;display:flex;flex-direction:column;gap:4px">
-        <div>→ Create the deal <strong style="color:#ddd">at first contact</strong>, not after the meeting</div>
+        <div>→ Create the deal in <a href="https://deals.pubitypgl.com/create" target="_blank" style="color:var(--y)">Deal Manager</a> <strong style="color:#ddd">at first contact</strong>, not after the meeting — it auto-syncs to HubSpot</div>
         <div>→ Update deal stage <strong style="color:#ddd">the same day</strong> the milestone happens</div>
         <div>→ If campaign dates shift, update Expected Close Date <strong style="color:#ddd">immediately</strong></div>
         <div>→ Service start + end dates must be logged when IO is signed</div>
@@ -2855,7 +2856,7 @@ Thank you for your attention to this matter. I look forward to our successful co
       <div style="display:flex;gap:10px;align-items:center"><span style="color:var(--y);font-size:16px">📋</span><span style="font-size:13px;color:#ccc">Deliverables tracker tab</span></div>
     </div>
     <div style="background:#0d0d0d;border-left:3px solid var(--y);border-radius:0 6px 6px 0;padding:10px 14px;font-size:12px;color:#aaa;margin-top:14px">
-      The campaign SharePoint folder is auto-created when a seller sets up a new deal in CRM and springboards. If the automation is broken, raise to <strong style="color:#fff">Rachel and Rhea</strong>.
+      When you create a deal in <a href="https://deals.pubitypgl.com/create" target="_blank" style="color:var(--y)">Deal Manager</a> and complete the springboard, a <strong style="color:#fff">Slack channel</strong> and <strong style="color:#fff">SharePoint folder</strong> are automatically created for the campaign. If the automation is broken, raise it to your manager or CS Ops.
     </div>
   </div>
 
@@ -3698,6 +3699,366 @@ Thank you for your attention to this matter. I look forward to our successful co
       </div>
     </div>
     <textarea style="width:100%;min-height:100px;background:#111;border:1px solid #FFD70044;border-radius:10px;padding:14px;color:#ccc;font-size:13px;line-height:1.7;font-family:inherit;resize:vertical" placeholder="Seb — leave feedback, coaching points, or priorities for this section..." onchange="localStorage.setItem('seb-processes',this.value)" id="seb-processes"></textarea>
+  </div>
+</div>
+
+<!-- ══ DOCUMENTS HUB ══ -->
+<div id="tab-dochub" class="tab-pane">
+  <div class="sh"><h2>📄 Documents Hub</h2><p>All key documents, templates, and tools in one place. Sourced from the <a href="https://pubitygroup.slack.com/docs/T020METK554/F0ALMFFUWAE" target="_blank">Commercial Hub Canvas</a>.</p></div>
+
+  <!-- CREDS DECK -->
+  <div class="lbl-section">🎨 CREDENTIALS & PITCH</div>
+  <div class="doc-cards" style="margin-bottom:24px">
+    <a class="doc-card" href="https://canva.link/pn8lpd8sbf0l2fm" target="_blank" style="border-color:var(--y)">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">🎨</div>
+      <div class="doc-card-type">CANVA</div>
+      <div class="doc-card-name">2026 Credentials Deck</div>
+      <div class="doc-card-desc">Latest company credentials for client pitches</div>
+    </a>
+    <a class="doc-card" href="https://docs.google.com/presentation/d/14qBlqEXo7PZWCjmTvEAVxdpSWCqg6-uQUXHDVgpgGfE/edit?slide=id.g31fca7ff36e_0_0#slide=id.g31fca7ff36e_0_0" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">🖼️</div>
+      <div class="doc-card-type">GOOGLE SLIDES</div>
+      <div class="doc-card-name">2025 Response Template</div>
+      <div class="doc-card-desc">Standard response deck template</div>
+    </a>
+    <a class="doc-card" href="https://docs.google.com/presentation/d/1W3l_a1w76Go7RRgIX-SsOnXegtFUSD3Q3eb3sDC6x34/edit?slide=id.g39d90d55a17_0_558" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📱</div>
+      <div class="doc-card-type">GOOGLE SLIDES</div>
+      <div class="doc-card-name">Paid Media 101</div>
+      <div class="doc-card-desc">Paid media overview deck</div>
+    </a>
+    <a class="doc-card" href="https://docs.google.com/presentation/d/1qcRCoZE40imsAmwqHBCblrirQAJkFc1RdOPZeQQg-R4/edit?slide=id.g3410dea533c_2_393" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">👋</div>
+      <div class="doc-card-type">GOOGLE SLIDES</div>
+      <div class="doc-card-name">Welcome Deck</div>
+      <div class="doc-card-desc">New starter welcome presentation</div>
+    </a>
+  </div>
+
+  <!-- DEAL CREATION & CAMPAIGN SETUP -->
+  <div class="lbl-section">🚀 DEAL CREATION & CAMPAIGN SETUP</div>
+  <div style="background:#111;border:1px solid var(--br);border-radius:10px;padding:14px 18px;margin-bottom:16px;display:flex;gap:12px;align-items:flex-start">
+    <span style="font-size:18px;flex-shrink:0">💡</span>
+    <div style="font-size:13px;color:#ccc;line-height:1.7"><strong style="color:var(--y)">How deals work:</strong> Create all new deals in <a href="https://deals.pubitypgl.com/create" target="_blank">Deal Manager</a>. Once submitted, a <strong style="color:#fff">Slack channel</strong> and <strong style="color:#fff">SharePoint folder</strong> are automatically created for the campaign. Use <a href="https://app.hubspot.com" target="_blank">HubSpot</a> to track and update deals through the pipeline.</div>
+  </div>
+  <div class="doc-cards" style="margin-bottom:24px">
+    <a class="doc-card" href="https://deals.pubitypgl.com/create" target="_blank" style="border-color:var(--y)">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📝</div>
+      <div class="doc-card-type">DEAL MANAGER</div>
+      <div class="doc-card-name">Create New Deal</div>
+      <div class="doc-card-desc">Always start here — auto-creates Slack + SharePoint</div>
+    </a>
+    <a class="doc-card" href="https://app.hubspot.com" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">🔗</div>
+      <div class="doc-card-type">CRM</div>
+      <div class="doc-card-name">HubSpot</div>
+      <div class="doc-card-desc">Track & update deals through the pipeline</div>
+    </a>
+    <a class="doc-card" href="https://forms.monday.com/forms/1bf181f23ce93bc765a452aa0a944e6f?r=euc1" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📋</div>
+      <div class="doc-card-type">MONDAY FORM</div>
+      <div class="doc-card-name">Campaign Briefing Springboard</div>
+      <div class="doc-card-desc">Complete ahead of daily standups</div>
+    </a>
+    <a class="doc-card" href="https://forms.monday.com/forms/eb445032189c98dd1e885d1466459e2e?r=euc1" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">🚀</div>
+      <div class="doc-card-type">MONDAY FORM</div>
+      <div class="doc-card-name">Amplification Springboard</div>
+      <div class="doc-card-desc">Handover signed-off amplification campaigns</div>
+    </a>
+    <a class="doc-card" href="https://pubitypgl.sharepoint.com/:x:/r/sites/Pubity/Shared%20Documents/Commercial%20Hub/Creative%20Solutions/Templates/Media_Plan_Template_Feb_2025.xlsx?d=w0741055e18ef48af89511a1a7f7e8533&csf=1&web=1&e=lYTfPY" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📊</div>
+      <div class="doc-card-type">SHAREPOINT</div>
+      <div class="doc-card-name">Media Plan Template</div>
+      <div class="doc-card-desc">Standard media plan template</div>
+    </a>
+    <a class="doc-card" href="https://pubity-deal-forecast.vercel.app/" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📈</div>
+      <div class="doc-card-type">VERCEL APP</div>
+      <div class="doc-card-name">Forecast Form</div>
+      <div class="doc-card-desc">Deal forecasting tool</div>
+    </a>
+  </div>
+
+  <!-- SHAREPOINT & FILES -->
+  <div class="lbl-section">🗂️ SHAREPOINT & FILES</div>
+  <div class="doc-cards" style="margin-bottom:24px">
+    <a class="doc-card" href="https://pubitypgl.sharepoint.com/:f:/r/sites/Pubity/Shared%20Documents/Brand%20Partnerships%20Hub?csf=1&web=1&e=goOJSZ" target="_blank" style="border-color:var(--y)">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">🗂️</div>
+      <div class="doc-card-type">SHAREPOINT</div>
+      <div class="doc-card-name">Commercial SharePoint</div>
+      <div class="doc-card-desc">Main commercial documents folder</div>
+    </a>
+    <a class="doc-card" href="https://pubitypgl.sharepoint.com/:f:/r/sites/Pubity/Shared%20Documents/Brand%20Partnerships%20Hub/Client%20Services/Clients?csf=1&web=1&e=uBVtAJ" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📂</div>
+      <div class="doc-card-type">SHAREPOINT</div>
+      <div class="doc-card-name">Client Folders</div>
+      <div class="doc-card-desc">All client campaign folders</div>
+    </a>
+    <a class="doc-card" href="https://pubitypgl.sharepoint.com/:f:/r/sites/Pubity/Shared%20Documents/Brand%20Partnerships%20Hub/Legal/Brand%20Partnerships/IOs%20%26%20Contracts?csf=1&web=1&e=fgowBx" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📁</div>
+      <div class="doc-card-type">SHAREPOINT</div>
+      <div class="doc-card-name">IOs & Contracts Folder</div>
+      <div class="doc-card-desc">All signed IOs and contracts</div>
+    </a>
+  </div>
+
+  <!-- LEGAL & CONTRACTS -->
+  <div class="lbl-section">⚖️ LEGAL & CONTRACTS</div>
+  <div class="doc-cards" style="margin-bottom:24px">
+    <a class="doc-card" href="https://pubitypgl.sharepoint.com/:x:/r/sites/Pubity/Shared%20Documents/Brand%20Partnerships%20Hub/Legal/Brand%20Partnerships/IOs%20%26%20Contracts/Amplification%20IO%20Template.xlsx?d=w3d46a11974844c9885f823c18dc6cf93&csf=1&web=1&e=BBZt8m" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📄</div>
+      <div class="doc-card-type">SHAREPOINT</div>
+      <div class="doc-card-name">Amplification IO Template</div>
+      <div class="doc-card-desc">Standard IO for amplification deals</div>
+    </a>
+    <a class="doc-card" href="https://pubitypgl.sharepoint.com/:x:/r/sites/Pubity/Shared%20Documents/Brand%20Partnerships%20Hub/Legal/Brand%20Partnerships/IOs%20%26%20Contracts/Bespoke%20IO%20Template.xlsx?d=we196808fdc434e24b2090c64c1a24a73&csf=1&web=1&e=19Gsjy" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📄</div>
+      <div class="doc-card-type">SHAREPOINT</div>
+      <div class="doc-card-name">Bespoke IO Template</div>
+      <div class="doc-card-desc">IO template for bespoke/custom deals</div>
+    </a>
+    <a class="doc-card" href="https://pubitygroup.slack.com/docs/T020METK554/F08QERKQFAQ" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📧</div>
+      <div class="doc-card-type">SLACK CANVAS</div>
+      <div class="doc-card-name">Commitment Email Template</div>
+      <div class="doc-card-desc">Email template for deal commitments</div>
+    </a>
+    <a class="doc-card" href="https://pubitygroup.slack.com/docs/T020METK554/F08Q3MUMMCN" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📜</div>
+      <div class="doc-card-type">SLACK CANVAS</div>
+      <div class="doc-card-name">IO & CSA Process</div>
+      <div class="doc-card-desc">Full IO and CSA walkthrough</div>
+    </a>
+    <a class="doc-card" href="https://pubitygroup.slack.com/files/U0AF79Q5SR4/F0A7FDPKVC1/pubity_group_-_new_customer_form_2025.docx" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">🇬🇧</div>
+      <div class="doc-card-type">DOCUMENT</div>
+      <div class="doc-card-name">UK New Customer Form</div>
+      <div class="doc-card-desc">NCF for UK clients</div>
+    </a>
+    <a class="doc-card" href="https://pubitygroup.slack.com/files/U0AF79Q5SR4/F0AH6C989DH/pubtiy_group_-_new_customer_form_2026_us.docx" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">🇺🇸</div>
+      <div class="doc-card-type">DOCUMENT</div>
+      <div class="doc-card-name">US New Customer Form</div>
+      <div class="doc-card-desc">NCF for US clients</div>
+    </a>
+    <a class="doc-card" href="https://docs.google.com/presentation/d/1_5VcfUS_SyyprHFAYX4pcoYI2h2ElvP2IQJfayQzNJo/edit?usp=sharing" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">💸</div>
+      <div class="doc-card-type">GOOGLE SLIDES</div>
+      <div class="doc-card-name">US Amplification Ratecards</div>
+      <div class="doc-card-desc">US pricing and rate cards</div>
+    </a>
+  </div>
+
+  <!-- TRACKING & DATA -->
+  <div class="lbl-section">📈 TRACKING & DATA</div>
+  <div class="doc-cards" style="margin-bottom:24px">
+    <a class="doc-card" href="https://pubitygroup.monday.com/boards/1214765329/views/32786570" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📈</div>
+      <div class="doc-card-type">MONDAY</div>
+      <div class="doc-card-name">Monday Deliverables Tracker</div>
+      <div class="doc-card-desc">Live tracker for campaign performance</div>
+    </a>
+    <a class="doc-card" href="https://pubitygroup.monday.com/boards/1214765329/views/30204656" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">🎯</div>
+      <div class="doc-card-type">MONDAY</div>
+      <div class="doc-card-name">Campaign Data</div>
+      <div class="doc-card-desc">Deliverables per campaign and performance</div>
+    </a>
+    <a class="doc-card" href="https://pubitygroup.monday.com/boards/1214765329/views/30207320" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📦</div>
+      <div class="doc-card-type">MONDAY</div>
+      <div class="doc-card-name">Delivery Overview</div>
+      <div class="doc-card-desc">Numbers, views, engagements, posts live</div>
+    </a>
+    <a class="doc-card" href="https://pubitygroup.monday.com/boards/1214765329/views/4795974" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">🗓️</div>
+      <div class="doc-card-type">MONDAY</div>
+      <div class="doc-card-name">Commercial Content Calendar</div>
+      <div class="doc-card-desc">Campaign scheduling calendar</div>
+    </a>
+  </div>
+
+  <!-- UPDATES & PLANNING -->
+  <div class="lbl-section">📝 UPDATES & PLANNING</div>
+  <div class="doc-cards" style="margin-bottom:24px">
+    <a class="doc-card" href="https://docs.google.com/spreadsheets/d/1hnehE43QCC3fOtjw0LStBjICfGT9Jcbw61p1Q_gNqxs/edit?usp=sharing" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📝</div>
+      <div class="doc-card-type">GOOGLE SHEETS</div>
+      <div class="doc-card-name">Week Ahead Update Sheet</div>
+      <div class="doc-card-desc">Weekly planning updates</div>
+    </a>
+    <a class="doc-card" href="https://docs.google.com/document/d/1BGqQoXsBEc_dUseVCImLogAfEh-Vep5hiAn0CYMfZcw/edit?tab=t.0" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📓</div>
+      <div class="doc-card-type">GOOGLE DOCS</div>
+      <div class="doc-card-name">Week Ahead Meeting Notes</div>
+      <div class="doc-card-desc">Meeting notes from weekly planning</div>
+    </a>
+  </div>
+
+  <!-- AUDIENCE & INSIGHTS -->
+  <div class="lbl-section">🔍 AUDIENCE & INSIGHTS</div>
+  <div class="doc-cards" style="margin-bottom:24px">
+    <a class="doc-card" href="https://www.demographicspro.com/dashboard" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">👥</div>
+      <div class="doc-card-type">PLATFORM</div>
+      <div class="doc-card-name">Demographics Pro</div>
+      <div class="doc-card-desc">Audience insights dashboard</div>
+    </a>
+    <a class="doc-card" href="https://pubitygroup.slack.com/docs/T020METK554/F0AJ12LJ96K" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">🔎</div>
+      <div class="doc-card-type">SLACK CANVAS</div>
+      <div class="doc-card-name">Case Study Finder</div>
+      <div class="doc-card-desc">Browse the case study library</div>
+    </a>
+    <a class="doc-card" href="https://pubitygroup.slack.com/docs/T020METK554/F0ALC8PV3PW" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">🤖</div>
+      <div class="doc-card-type">SLACK CANVAS</div>
+      <div class="doc-card-name">Demographics Pro AI Bot</div>
+      <div class="doc-card-desc">AI-powered audience insights tool</div>
+    </a>
+    <a class="doc-card" href="https://pubitypgl.sharepoint.com/:x:/r/sites/Pubity/Shared%20Documents/Commercial%20Hub/Creative%20Solutions/Insights/RTB%20Insights/Creative%20Ideas%20Bank.xlsx?d=we97813b187fb471299e863a26fc95877&csf=1&web=1&e=nXP6zv" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">💡</div>
+      <div class="doc-card-type">SHAREPOINT</div>
+      <div class="doc-card-name">Creative Ideas Bank</div>
+      <div class="doc-card-desc">Proactive campaign ideas</div>
+    </a>
+  </div>
+
+  <!-- PROCEDURES & WORKFLOWS -->
+  <div class="lbl-section">⚙️ PROCEDURES & WORKFLOWS</div>
+  <div class="doc-cards" style="margin-bottom:24px">
+    <a class="doc-card" href="https://pubitygroup.slack.com/docs/T020METK554/F0AGV7GCFR9" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">💬</div>
+      <div class="doc-card-type">SLACK CANVAS</div>
+      <div class="doc-card-name">Slack Protocols — Campaign Setup</div>
+      <div class="doc-card-desc">How to set up campaign Slack channels</div>
+    </a>
+    <a class="doc-card" href="https://pubitygroup.slack.com/docs/T020METK554/F0AJU9ULL11" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📌</div>
+      <div class="doc-card-type">SLACK CANVAS</div>
+      <div class="doc-card-name">SharePoint + Slack Procedure</div>
+      <div class="doc-card-desc">File management and naming conventions</div>
+    </a>
+    <a class="doc-card" href="https://pubitygroup.slack.com/docs/T020METK554/F0AN6BNGBNU" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📋</div>
+      <div class="doc-card-type">SLACK CANVAS</div>
+      <div class="doc-card-name">Wrap / PCA Report Guidelines</div>
+      <div class="doc-card-desc">Standards for post-campaign reports</div>
+    </a>
+    <a class="doc-card" href="https://pubitypgl.sharepoint.com/:x:/r/sites/Pubity/Shared%20Documents/Brand%20Partnerships%20Hub/Commercial%20Process%20%26%20Policies/CostofSale_Framework2026_20Feb26.xlsx?d=wf77459a8300b40e1b8570ce03039fad0&csf=1&web=1&e=aU3Dx2" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">💰</div>
+      <div class="doc-card-type">SHAREPOINT</div>
+      <div class="doc-card-name">Cost of Sale Framework</div>
+      <div class="doc-card-desc">2026 COS framework and guidelines</div>
+    </a>
+    <a class="doc-card" href="https://pubitygroup.slack.com/docs/T020METK554/F0B4C2Z9GMN" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">✏️</div>
+      <div class="doc-card-type">SLACK CANVAS</div>
+      <div class="doc-card-name">IO + CSA — Who Does What</div>
+      <div class="doc-card-desc">Responsibility breakdown for IOs and CSAs</div>
+    </a>
+    <a class="doc-card" href="https://pubitygroup.slack.com/docs/T020METK554/F0AH4TA0W3V" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📥</div>
+      <div class="doc-card-type">SLACK CANVAS</div>
+      <div class="doc-card-name">Email Organisation</div>
+      <div class="doc-card-desc">How to organise your inbox</div>
+    </a>
+    <a class="doc-card" href="https://pubitygroup.slack.com/docs/T020METK554/F0AJ4KGS36H" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">😳</div>
+      <div class="doc-card-type">SLACK CANVAS</div>
+      <div class="doc-card-name">Handling Heavy Client Feedback</div>
+      <div class="doc-card-desc">What's in IO T&Cs to help with pushback</div>
+    </a>
+  </div>
+
+  <!-- OKRs & REFERENCE -->
+  <div class="lbl-section">🥅 OKRs & COMPANY INFO</div>
+  <div class="doc-cards" style="margin-bottom:24px">
+    <a class="doc-card" href="https://65twenty.sharepoint.com/:x:/r/sites/Pubity/_layouts/15/Doc.aspx?sourcedoc=%7BB1B252F6-3084-4BF5-B847-D12B1E3C779C%7D&file=Full%20Company%20OKRs%20official.xlsx&action=default&mobileredirect=true" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">🏢</div>
+      <div class="doc-card-type">SHAREPOINT</div>
+      <div class="doc-card-name">Company Wide OKRs</div>
+      <div class="doc-card-desc">Full company objectives & key results</div>
+    </a>
+    <a class="doc-card" href="https://65twenty.sharepoint.com/:x:/r/sites/Pubity/_layouts/15/Doc.aspx?sourcedoc=%7BB42C25D4-1ED0-462E-A958-58A8B1C031C6%7D&file=Commercial%20Products%20Hub.xlsx&action=default&mobileredirect=true" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">🛍️</div>
+      <div class="doc-card-type">SHAREPOINT</div>
+      <div class="doc-card-name">Commercial Products Hub</div>
+      <div class="doc-card-desc">Overview of all products we sell</div>
+    </a>
+    <a class="doc-card" href="https://pubitypgl.sharepoint.com/:p:/r/sites/PubityPGLProject/Shared%20Documents/Commercial%20Hub%202.0/Documents%20%26%20Templates/PubityGroup_CreativeStudioProcess_Sales,Creative,Delivery_FINAL-Nov%2724.pptx?d=w5d60d035cd844879818057ef18edb7d4&csf=1&web=1&e=UCtm8R" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">🤝</div>
+      <div class="doc-card-type">SHAREPOINT</div>
+      <div class="doc-card-name">Brand Partnerships Process</div>
+      <div class="doc-card-desc">Full sales/creative/delivery process</div>
+    </a>
+    <a class="doc-card" href="https://pubitygroup.slack.com/docs/T020METK554/F0ALMFFUWAE" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">🏠</div>
+      <div class="doc-card-type">SLACK CANVAS</div>
+      <div class="doc-card-name">Commercial Hub Canvas</div>
+      <div class="doc-card-desc">Full Bag Chasers document hub on Slack</div>
+    </a>
+  </div>
+
+  <!-- COMPETITOR & MARKET INTEL -->
+  <div class="lbl-section">🔬 COMPETITOR & MARKET INTEL</div>
+  <div class="doc-cards" style="margin-bottom:24px">
+    <a class="doc-card" href="https://pubitygroup.slack.com/files/U0AF79Q5SR4/F0AN6E49C9W/pubity_competitor_analysis_sheet_.xlsx" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📊</div>
+      <div class="doc-card-type">SLACK FILE</div>
+      <div class="doc-card-name">Competitor Analysis Sheet</div>
+      <div class="doc-card-desc">Info per company and comparison</div>
+    </a>
+    <a class="doc-card" href="https://pubitygroup.slack.com/files/U0AF79Q5SR4/F0AM604LARZ/2026_competitors_organised.xlsx" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📂</div>
+      <div class="doc-card-type">SLACK FILE</div>
+      <div class="doc-card-name">2026 Competitors Organised</div>
+      <div class="doc-card-desc">Company, brand, platform, URL, status</div>
+    </a>
   </div>
 </div>
 
