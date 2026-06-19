@@ -305,6 +305,8 @@
   .landing-card.us-card .glow{background:radial-gradient(circle,rgba(3,105,161,.15),transparent 70%)}
   .landing-card.uk-card:hover{border-color:#60a5fa}
   .landing-card.us-card:hover{border-color:#06b6d4}
+  body.region-us .uk-content{display:none!important}
+  body.region-uk .us-content{display:none!important}
   #main-app{display:none}
   #main-app.visible{display:block}
 
@@ -411,10 +413,13 @@
         <div id="hsub">New Seller · Target: 6 meetings/week</div>
       </div>
     </div>
-    <div id="progress-bar-wrap">
-      <div id="pb-track"><div id="pb-fill"></div></div>
-      <span id="pb-pct">0%</span>
-      <span id="pb-num">0/46</span>
+    <div style="display:flex;align-items:center;gap:12px">
+      <button id="region-badge" onclick="switchRegion()" style="background:none;border:1px solid var(--br);border-radius:6px;padding:3px 10px;font-size:11px;font-weight:700;color:var(--m);cursor:pointer;font-family:inherit;white-space:nowrap;transition:border-color .2s" onmouseover="this.style.borderColor='var(--y)'" onmouseout="this.style.borderColor='var(--br)'" title="Click to switch region">🇬🇧 UK</button>
+      <div id="progress-bar-wrap">
+        <div id="pb-track"><div id="pb-fill"></div></div>
+        <span id="pb-pct">0%</span>
+        <span id="pb-num">0/46</span>
+      </div>
     </div>
   </div>
   <div id="tabs">
@@ -941,8 +946,8 @@
         <div style="background:#0d2010;border:1px solid var(--g);border-radius:8px;padding:10px 14px;font-size:12px;font-weight:700;text-align:center;min-width:110px"><div style="font-size:18px;margin-bottom:4px">🚀</div>Loop in Delivery<br>Start campaign</div>
       </div>
       <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px">
-        <div style="background:#0d2010;border:1px solid var(--g);border-radius:6px;padding:6px 12px;font-size:11px;color:var(--g);font-weight:700">✓ Under £200k → signed IO is enough, no CSA needed</div>
-        <div style="background:#1a1200;border:1px solid var(--o);border-radius:6px;padding:6px 12px;font-size:11px;color:var(--o);font-weight:700">⚠ Over £200k → CSA also required</div>
+        <div style="background:#0d2010;border:1px solid var(--g);border-radius:6px;padding:6px 12px;font-size:11px;color:var(--g);font-weight:700">✓ Under <span class="uk-content">£200k</span><span class="us-content">$300k</span> → signed IO is enough, no CSA needed</div>
+        <div style="background:#1a1200;border:1px solid var(--o);border-radius:6px;padding:6px 12px;font-size:11px;color:var(--o);font-weight:700">⚠ Over <span class="uk-content">£200k</span><span class="us-content">$300k</span> → CSA also required</div>
         <div style="background:#1a0000;border:1px solid var(--r);border-radius:6px;padding:6px 12px;font-size:11px;color:var(--r);font-weight:700">🚫 No hard costs without signed IO</div>
       </div>
     </div>
@@ -1047,7 +1052,7 @@
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:8px">
     <div style="background:var(--c);border:1px solid var(--br);border-radius:10px;padding:16px 18px">
       <div style="font-size:10px;font-weight:900;color:#888;letter-spacing:1.5px;margin-bottom:4px">ONE PAGER</div>
-      <div style="font-size:18px;font-weight:900;color:#ccc;margin-bottom:10px">Under £100k</div>
+      <div style="font-size:18px;font-weight:900;color:#ccc;margin-bottom:10px"><span class="uk-content">Under £100k</span><span class="us-content">Under $150k</span></div>
       <div style="font-size:12px;color:#aaa;line-height:1.8">
         <div style="display:flex;gap:6px;align-items:center;margin-bottom:3px"><span style="color:var(--y)">•</span> Brief</div>
         <div style="display:flex;gap:6px;align-items:center;margin-bottom:3px"><span style="color:var(--y)">•</span> Partnership</div>
@@ -1056,7 +1061,7 @@
     </div>
     <div style="background:var(--c);border:1px solid var(--br);border-radius:10px;padding:16px 18px">
       <div style="font-size:10px;font-weight:900;color:#FF9900;letter-spacing:1.5px;margin-bottom:4px">MINI WRAP</div>
-      <div style="font-size:18px;font-weight:900;color:#ccc;margin-bottom:10px">£101–125k</div>
+      <div style="font-size:18px;font-weight:900;color:#ccc;margin-bottom:10px"><span class="uk-content">£101–125k</span><span class="us-content">$150–200k</span></div>
       <div style="font-size:12px;color:#aaa;line-height:1.8">
         <div style="display:flex;gap:6px;align-items:center;margin-bottom:3px"><span style="color:var(--o)">•</span> Brief</div>
         <div style="display:flex;gap:6px;align-items:center;margin-bottom:3px"><span style="color:var(--o)">•</span> Partnership</div>
@@ -1067,7 +1072,7 @@
     </div>
     <div style="background:var(--c);border:1px solid var(--y)44;border-radius:10px;padding:16px 18px">
       <div style="font-size:10px;font-weight:900;color:var(--y);letter-spacing:1.5px;margin-bottom:4px">STANDARD RESPONSE</div>
-      <div style="font-size:18px;font-weight:900;color:var(--y);margin-bottom:10px">£125k+</div>
+      <div style="font-size:18px;font-weight:900;color:var(--y);margin-bottom:10px"><span class="uk-content">£125k+</span><span class="us-content">$200k+</span></div>
       <div style="font-size:12px;color:#aaa;line-height:1.8">
         <div style="display:flex;gap:6px;align-items:center;margin-bottom:3px"><span style="color:var(--y)">•</span> Brief</div>
         <div style="display:flex;gap:6px;align-items:center;margin-bottom:3px"><span style="color:var(--y)">•</span> Partnership</div>
@@ -1080,7 +1085,7 @@
     </div>
     <div style="background:var(--c);border:1px solid #a855f7;border-radius:10px;padding:16px 18px">
       <div style="font-size:10px;font-weight:900;color:#a855f7;letter-spacing:1.5px;margin-bottom:4px">BLS (BRAND LIFT STUDY)</div>
-      <div style="font-size:18px;font-weight:900;color:#a855f7;margin-bottom:10px">£TBC+</div>
+      <div style="font-size:18px;font-weight:900;color:#a855f7;margin-bottom:10px"><span class="uk-content">£TBC+</span><span class="us-content">$TBC+</span></div>
       <div style="font-size:12px;color:#aaa;line-height:1.8">
         <div style="display:flex;gap:6px;align-items:center;margin-bottom:3px"><span style="color:#a855f7">•</span> Brief</div>
         <div style="display:flex;gap:6px;align-items:center;margin-bottom:3px"><span style="color:#a855f7">•</span> Partnership</div>
@@ -1114,9 +1119,9 @@
   <div class="sh"><h2>Product & Pages</h2><p>Know these cold before any client meeting.</p></div>
   <div class="lbl-section">OUR THREE PRODUCTS</div>
   <div class="product-grid">
-    <div class="product-card"><div class="product-tier">ENTRY LEVEL</div><div class="product-name">Amplification</div><div class="product-desc">Brand provides the asset. We post it. Fast, scalable, lower cost. Best for brands who want reach quickly with existing creative.</div><div class="product-stat">UK min: <span>£30,000</span></div><div class="product-stat">US min: <span>$60,000</span></div><div class="product-stat">CoS: 5–20%</div></div>
-    <div class="product-card"><div class="product-tier">MID-TIER</div><div class="product-name">Integrated Editorial</div><div class="product-desc">We create original content in our editorial tone. Most common product. Best engagement. Looks and feels like a Pubity post — not an ad.</div><div class="product-stat">UK min: <span>£75–100k</span></div><div class="product-stat">US min: <span>$125–150k</span></div><div class="product-stat">CoS: 40%</div></div>
-    <div class="product-card"><div class="product-tier">PREMIUM</div><div class="product-name">Bespoke Partnerships</div><div class="product-desc">Full custom — shoots, original formats, talent. Examples: Fortnite x Simpsons, Burger King Spongebob, NFL. Needs VP + Studio sign-off at $500k+.</div><div class="product-stat">UK min: <span>£75–100k+</span></div><div class="product-stat">US min: <span>$125–150k+</span></div><div class="product-stat">CoS: 40%</div></div>
+    <div class="product-card"><div class="product-tier">ENTRY LEVEL</div><div class="product-name">Amplification</div><div class="product-desc">Brand provides the asset. We post it. Fast, scalable, lower cost. Best for brands who want reach quickly with existing creative.</div><div class="product-stat uk-content">Min: <span>£30,000</span></div><div class="product-stat us-content">Min: <span>$60,000</span></div><div class="product-stat">CoS: 5–20%</div></div>
+    <div class="product-card"><div class="product-tier">MID-TIER</div><div class="product-name">Integrated Editorial</div><div class="product-desc">We create original content in our editorial tone. Most common product. Best engagement. Looks and feels like a Pubity post — not an ad.</div><div class="product-stat uk-content">Min: <span>£75–100k</span></div><div class="product-stat us-content">Min: <span>$125–150k</span></div><div class="product-stat">CoS: 40%</div></div>
+    <div class="product-card"><div class="product-tier">PREMIUM</div><div class="product-name">Bespoke Partnerships</div><div class="product-desc">Full custom — shoots, original formats, talent. Examples: Fortnite x Simpsons, Burger King Spongebob, NFL. Needs VP + Studio sign-off at $500k+.</div><div class="product-stat uk-content">Min: <span>£75–100k+</span></div><div class="product-stat us-content">Min: <span>$125–150k+</span></div><div class="product-stat">CoS: 40%</div></div>
   </div>
   <div class="lbl-section">OUR 15 PAGES</div>
   <div class="pages-table">
@@ -1217,7 +1222,7 @@
       <div style="background:#0d2010;border:1px solid rgba(40,167,69,.35);border-radius:12px;padding:18px">
         <div style="font-size:10px;font-weight:900;color:#28A745;letter-spacing:1.5px;margin-bottom:14px">✅ WHAT CLOSED WON DEALS LOOK LIKE</div>
         <div style="display:flex;flex-direction:column;gap:9px">
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:#28A745;font-size:13px;flex-shrink:0;margin-top:1px">✓</span><div style="font-size:12px;color:#ccc;line-height:1.5"><strong style="color:#fff">Budget ≥ minimum</strong> — UK £30k+ Amp / £75k+ IE. US $60k+ Amp / $125k+ IE</div></div>
+          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:#28A745;font-size:13px;flex-shrink:0;margin-top:1px">✓</span><div style="font-size:12px;color:#ccc;line-height:1.5"><strong style="color:#fff">Budget ≥ minimum</strong> — <span class="uk-content">£30k+ Amp / £75k+ IE</span><span class="us-content">$60k+ Amp / $125k+ IE</span></div></div>
           <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:#28A745;font-size:13px;flex-shrink:0;margin-top:1px">✓</span><div style="font-size:12px;color:#ccc;line-height:1.5"><strong style="color:#fff">KPIs agreed upfront</strong> — ER, views, or reach target defined before proposal is sent</div></div>
           <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:#28A745;font-size:13px;flex-shrink:0;margin-top:1px">✓</span><div style="font-size:12px;color:#ccc;line-height:1.5"><strong style="color:#fff">Demographics validated</strong> — Demographics Pro shows 60%+ audience overlap with Pubity pages</div></div>
           <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:#28A745;font-size:13px;flex-shrink:0;margin-top:1px">✓</span><div style="font-size:12px;color:#ccc;line-height:1.5"><strong style="color:#fff">ER value anchored early</strong> — "Our ER is 3–12% vs industry under 1%" said in the first meeting</div></div>
@@ -1396,14 +1401,14 @@
   <div class="sh"><h2>Finance & IO Process</h2><p>Deal economics, IO/CSA rules, and payment terms.</p></div>
   <!-- DEAL ECONOMICS VISUAL BREAKDOWN -->
   <div style="background:#111;border:1px solid var(--br);border-radius:14px;padding:22px;margin-bottom:28px">
-    <div style="font-size:11px;font-weight:900;color:var(--y);letter-spacing:1.5px;margin-bottom:4px">DEAL ECONOMICS — £100K EXAMPLE</div>
+    <div style="font-size:11px;font-weight:900;color:var(--y);letter-spacing:1.5px;margin-bottom:4px">DEAL ECONOMICS — <span class="uk-content">£100K</span><span class="us-content">$150K</span> EXAMPLE</div>
     <div style="font-size:12px;color:#555;margin-bottom:20px">Where the money goes — and why margin matters</div>
 
     <!-- Total Deal -->
     <div style="margin-bottom:16px">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
         <div style="font-size:13px;font-weight:800;color:#fff">💰 Client Fee (Total Deal)</div>
-        <div style="font-size:20px;font-weight:900;color:var(--y)">£100,000</div>
+        <div style="font-size:20px;font-weight:900;color:var(--y)"><span class="uk-content">£100,000</span><span class="us-content">$150,000</span></div>
       </div>
       <div style="height:8px;background:#1a1a1a;border-radius:4px;overflow:hidden">
         <div class="fin-bar" data-w="100" style="height:100%;width:0%;background:var(--y);border-radius:4px;transition:width 1.1s ease"></div>
@@ -1416,7 +1421,7 @@
         <div style="font-size:12px;font-weight:700;color:#ccc">📡 Publisher / Production Cost</div>
         <div style="display:flex;gap:12px;align-items:center">
           <span style="font-size:11px;color:#555;font-weight:700">60%</span>
-          <span style="font-size:13px;font-weight:800;color:#ccc">£60,000</span>
+          <span style="font-size:13px;font-weight:800;color:#ccc"><span class="uk-content">£60,000</span><span class="us-content">$90,000</span></span>
         </div>
       </div>
       <div style="height:16px;background:#1a1a1a;border-radius:4px;overflow:hidden">
@@ -1432,7 +1437,7 @@
         <div style="font-size:12px;font-weight:700;color:#ccc">👥 Team Costs (AM, Ops, Creative)</div>
         <div style="display:flex;gap:12px;align-items:center">
           <span style="font-size:11px;color:#555;font-weight:700">5%</span>
-          <span style="font-size:13px;font-weight:800;color:#ccc">£5,000</span>
+          <span style="font-size:13px;font-weight:800;color:#ccc"><span class="uk-content">£5,000</span><span class="us-content">$7,500</span></span>
         </div>
       </div>
       <div style="height:16px;background:#1a1a1a;border-radius:4px;overflow:hidden">
@@ -1446,7 +1451,7 @@
         <div style="font-size:12px;font-weight:700;color:#ccc">⚙️ Platform / Admin</div>
         <div style="display:flex;gap:12px;align-items:center">
           <span style="font-size:11px;color:#555;font-weight:700">2%</span>
-          <span style="font-size:13px;font-weight:800;color:#ccc">£2,000</span>
+          <span style="font-size:13px;font-weight:800;color:#ccc"><span class="uk-content">£2,000</span><span class="us-content">$3,000</span></span>
         </div>
       </div>
       <div style="height:16px;background:#1a1a1a;border-radius:4px;overflow:hidden">
@@ -1463,7 +1468,7 @@
         <div style="font-size:13px;font-weight:900;color:var(--g)">✅ Gross Margin</div>
         <div style="display:flex;gap:12px;align-items:center">
           <span style="font-size:14px;font-weight:900;color:var(--g)">33%</span>
-          <span style="font-size:20px;font-weight:900;color:var(--g)">£33,000</span>
+          <span style="font-size:20px;font-weight:900;color:var(--g)"><span class="uk-content">£33,000</span><span class="us-content">$49,500</span></span>
         </div>
       </div>
       <div style="height:24px;background:#1a1a1a;border-radius:4px;overflow:hidden">
@@ -1489,7 +1494,7 @@
         <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:11px 14px;flex:1;margin-bottom:8px">
           <div style="display:flex;justify-content:space-between;align-items:center">
             <div style="font-size:12px;font-weight:800;color:#888">Months 1–3 · Learning Phase</div>
-            <div style="font-size:18px;font-weight:900;color:#444">£0</div>
+            <div style="font-size:18px;font-weight:900;color:#444"><span class="uk-content">£0</span><span class="us-content">$0</span></div>
           </div>
           <div style="font-size:11px;color:#555;margin-top:3px">No revenue expected — focus on product, process, and pipeline</div>
         </div>
@@ -1504,7 +1509,7 @@
         <div style="background:#1a1000;border:1px solid #3a2200;border-radius:8px;padding:11px 14px;flex:1;margin-bottom:8px">
           <div style="display:flex;justify-content:space-between;align-items:center">
             <div style="font-size:12px;font-weight:800;color:#fff">Months 4–6 · First Deals</div>
-            <div style="font-size:18px;font-weight:900;color:#FF9900">£100–200K</div>
+            <div style="font-size:18px;font-weight:900;color:#FF9900"><span class="uk-content">£100–200K</span><span class="us-content">$150–300K</span></div>
           </div>
           <div style="font-size:11px;color:#888;margin-top:3px">Pilot campaigns closing — first wins land here</div>
           <div style="height:4px;background:#2a1800;border-radius:99px;margin-top:8px;overflow:hidden">
@@ -1523,7 +1528,7 @@
         <div style="background:#1a1200;border:1px solid #3a2800;border-radius:8px;padding:11px 14px;flex:1;margin-bottom:8px">
           <div style="display:flex;justify-content:space-between;align-items:center">
             <div style="font-size:12px;font-weight:800;color:#fff">Months 7–12 · Ramping</div>
-            <div style="font-size:18px;font-weight:900;color:var(--y)">£500K+</div>
+            <div style="font-size:18px;font-weight:900;color:var(--y)"><span class="uk-content">£500K+</span><span class="us-content">$750K+</span></div>
           </div>
           <div style="font-size:11px;color:#888;margin-top:3px">Own pipeline building — serious revenue starts here</div>
           <div style="height:4px;background:#2a1800;border-radius:99px;margin-top:8px;overflow:hidden">
@@ -1541,7 +1546,7 @@
         <div style="background:#1a1a00;border:2px solid var(--y);border-radius:8px;padding:13px 14px;flex:1">
           <div style="display:flex;justify-content:space-between;align-items:center">
             <div style="font-size:13px;font-weight:900;color:var(--y)">Year 2 · Full Quota</div>
-            <div style="font-size:22px;font-weight:900;color:var(--y)">£2M+</div>
+            <div style="font-size:22px;font-weight:900;color:var(--y)"><span class="uk-content">£2M+</span><span class="us-content">$3M+</span></div>
           </div>
           <div style="font-size:11px;color:#aaa;margin-top:3px">Full pipeline ownership — consistent quota attainment</div>
           <div style="height:6px;background:#2a2a00;border-radius:99px;margin-top:8px;overflow:hidden">
@@ -1591,8 +1596,8 @@
         </div>
       </div>
       <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px">
-        <div style="background:#0d2010;border:1px solid var(--g);border-radius:6px;padding:6px 12px;font-size:11px;color:var(--g);font-weight:700">✓ Under £200k → signed IO is enough, no CSA needed</div>
-        <div style="background:#1a1200;border:1px solid var(--o);border-radius:6px;padding:6px 12px;font-size:11px;color:var(--o);font-weight:700">⚠ Over £200k → CSA also required</div>
+        <div style="background:#0d2010;border:1px solid var(--g);border-radius:6px;padding:6px 12px;font-size:11px;color:var(--g);font-weight:700">✓ Under <span class="uk-content">£200k</span><span class="us-content">$300k</span> → signed IO is enough, no CSA needed</div>
+        <div style="background:#1a1200;border:1px solid var(--o);border-radius:6px;padding:6px 12px;font-size:11px;color:var(--o);font-weight:700">⚠ Over <span class="uk-content">£200k</span><span class="us-content">$300k</span> → CSA also required</div>
         <div style="background:#1a0000;border:1px solid var(--r);border-radius:6px;padding:6px 12px;font-size:11px;color:var(--r);font-weight:700">🚫 No hard costs without signed IO</div>
       </div>
     </div>
@@ -1653,7 +1658,7 @@
     <div id="pt-q1">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
         <div class="pt-q-num" style="background:var(--y);color:#000">1</div>
-        <div style="font-size:13px;font-weight:800;color:#fff">Is the deal <span style="color:var(--y)">under £100K</span>, with all deliverables in the <span style="color:var(--y)">same calendar month</span>?</div>
+        <div style="font-size:13px;font-weight:800;color:#fff">Is the deal <span style="color:var(--y)">under <span class="uk-content">£100K</span><span class="us-content">$150K</span></span>, with all deliverables in the <span style="color:var(--y)">same calendar month</span>?</div>
       </div>
       <div style="display:flex;gap:10px;margin-left:38px">
         <button class="pt-btn pt-yes" onclick="ptAnswer(1,'yes')">✓ Yes</button>
@@ -1666,7 +1671,7 @@
       <div class="pt-connector"></div>
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
         <div class="pt-q-num" style="background:#FF9900;color:#000">2</div>
-        <div style="font-size:13px;font-weight:800;color:#fff">Is the delivery window <span style="color:#FF9900">short (1–2 weeks)</span> and the deal <span style="color:#FF9900">over £150K</span>?</div>
+        <div style="font-size:13px;font-weight:800;color:#fff">Is the delivery window <span style="color:#FF9900">short (1–2 weeks)</span> and the deal <span style="color:#FF9900">over <span class="uk-content">£150K</span><span class="us-content">$225K</span></span>?</div>
       </div>
       <div style="display:flex;gap:10px;margin-left:38px">
         <button class="pt-btn pt-yes" onclick="ptAnswer(2,'yes')">✓ Yes</button>
@@ -1702,15 +1707,15 @@
   <!-- KEY DOCUMENTS -->
   <div class="lbl-section" style="margin-top:28px">KEY DOCUMENTS — QUICK ACCESS</div>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:24px">
-    <a href="https://pubitygroup.slack.com/files/U0AF79Q5SR4/F0A7FDPKVC1/pubity_group_-_new_customer_form_2025.docx" target="_blank" style="background:var(--c);border:1px solid var(--br);border-radius:10px;padding:14px 16px;text-decoration:none;display:flex;gap:12px;align-items:center;transition:border-color .2s" onmouseover="this.style.borderColor='var(--y)'" onmouseout="this.style.borderColor='var(--br)'">
+    <a class="uk-content" href="https://pubitygroup.slack.com/files/U0AF79Q5SR4/F0A7FDPKVC1/pubity_group_-_new_customer_form_2025.docx" target="_blank" style="background:var(--c);border:1px solid var(--br);border-radius:10px;padding:14px 16px;text-decoration:none;display:flex;gap:12px;align-items:center;transition:border-color .2s" onmouseover="this.style.borderColor='var(--y)'" onmouseout="this.style.borderColor='var(--br)'">
       <span style="font-size:28px">📄</span>
       <div><div style="font-size:12px;font-weight:800;color:#fff">🇬🇧 UK New Customer Form</div><div style="font-size:11px;color:#888;margin-top:2px">New client onboarding doc</div></div>
     </a>
-    <a href="https://pubitygroup.slack.com/files/U0AF79Q5SR4/F0AH6C989DH/pubtiy_group_-_new_customer_form_2026_us.docx" target="_blank" style="background:var(--c);border:1px solid var(--br);border-radius:10px;padding:14px 16px;text-decoration:none;display:flex;gap:12px;align-items:center;transition:border-color .2s" onmouseover="this.style.borderColor='var(--y)'" onmouseout="this.style.borderColor='var(--br)'">
+    <a class="us-content" href="https://pubitygroup.slack.com/files/U0AF79Q5SR4/F0AH6C989DH/pubtiy_group_-_new_customer_form_2026_us.docx" target="_blank" style="background:var(--c);border:1px solid var(--br);border-radius:10px;padding:14px 16px;text-decoration:none;display:flex;gap:12px;align-items:center;transition:border-color .2s" onmouseover="this.style.borderColor='var(--y)'" onmouseout="this.style.borderColor='var(--br)'">
       <span style="font-size:28px">📄</span>
       <div><div style="font-size:12px;font-weight:800;color:#fff">🇺🇸 US New Customer Form</div><div style="font-size:11px;color:#888;margin-top:2px">New client onboarding doc</div></div>
     </a>
-    <a href="https://docs.google.com/presentation/d/1_5VcfUS_SyyprHFAYX4pcoYI2h2ElvP2IQJfayQzNJo/edit?usp=sharing" target="_blank" style="background:var(--c);border:1px solid var(--br);border-radius:10px;padding:14px 16px;text-decoration:none;display:flex;gap:12px;align-items:center;transition:border-color .2s" onmouseover="this.style.borderColor='var(--y)'" onmouseout="this.style.borderColor='var(--br)'">
+    <a class="us-content" href="https://docs.google.com/presentation/d/1_5VcfUS_SyyprHFAYX4pcoYI2h2ElvP2IQJfayQzNJo/edit?usp=sharing" target="_blank" style="background:var(--c);border:1px solid var(--br);border-radius:10px;padding:14px 16px;text-decoration:none;display:flex;gap:12px;align-items:center;transition:border-color .2s" onmouseover="this.style.borderColor='var(--y)'" onmouseout="this.style.borderColor='var(--br)'">
       <span style="font-size:28px">💸</span>
       <div><div style="font-size:12px;font-weight:800;color:#fff">💵 US Amplification Ratecard</div><div style="font-size:11px;color:#888;margin-top:2px">USD pricing deck</div></div>
     </a>
@@ -1727,7 +1732,7 @@
       <div><div style="font-size:12px;font-weight:800;color:#fff">📁 IOs & Contracts Folder</div><div style="font-size:11px;color:#888;margin-top:2px">All templates on SharePoint</div></div>
     </a>
   </div>
-  <div style="background:#1a1200;border:1px solid #FFD70033;border-radius:8px;padding:10px 14px;font-size:11px;color:#888;margin-bottom:28px">
+  <div class="uk-content" style="background:#1a1200;border:1px solid #FFD70033;border-radius:8px;padding:10px 14px;font-size:11px;color:#888;margin-bottom:28px">
     💷 GBP & 🇦🇪 UAE Amplification Ratecards — ask Rachel or check the <a href="https://pubitygroup.slack.com/docs/T020METK554/F0AGV7B4MHR" target="_blank" style="color:var(--y)">Key Documents canvas ↗</a> for current links.
   </div>
 
@@ -2463,7 +2468,7 @@ Thank you for your attention to this matter. I look forward to our successful co
       <div class="io-step"><div class="io-step-num">2</div><div class="io-step-text"><strong>Sales</strong> shares the Pubity Group Advertising Campaign Standard T&Cs alongside the IO</div></div>
       <div class="io-step"><div class="io-step-num">3</div><div class="io-step-text">Once the IO has been <strong>signed by the client</strong>, the <strong>Delivery</strong> team can be looped in on comms and work on the campaign can start</div></div>
       <div class="io-warning"><span>⚠️</span><span>Absolutely no hard costs can be incurred without a signed IO</span></div>
-      <div class="io-info"><span>✅</span><span>Under £200k: No additional PGL CSA needed — content can go live with the signed IO alone. Over £200k: A CSA signing is also required.</span></div>
+      <div class="io-info"><span>✅</span><span>Under <span class="uk-content">£200k</span><span class="us-content">$300k</span>: No additional PGL CSA needed — content can go live with the signed IO alone. Over <span class="uk-content">£200k</span><span class="us-content">$300k</span>: A CSA signing is also required.</span></div>
       <div class="note-wrap"><div class="note-lbl">📝 MY NOTES</div><textarea placeholder="Notes on amplification IO process..." onchange="saveNote('io-amp',this.value)" id="note-io-amp"></textarea></div>
     </div>
   </div>
@@ -2518,22 +2523,22 @@ Thank you for your attention to this matter. I look forward to our successful co
   <div class="payment-grid">
     <div class="payment-card">
       <div class="opt-label">OPTION 1</div>
-      <div class="opt-condition">Small number of deliverables · All in same month · Under £100k total</div>
+      <div class="opt-condition">Small number of deliverables · All in same month · Under <span class="uk-content">£100k</span><span class="us-content">$150k</span> total</div>
       <div class="opt-terms"><span class="opt-pct">100%</span> of total fee invoiced upon all agreed content going live, payable within <strong>30 days</strong></div>
     </div>
     <div class="payment-card">
       <div class="opt-label">OPTION 2</div>
-      <div class="opt-condition">Exceeds 1 month duration · Up to 3 months · Over £150k total</div>
+      <div class="opt-condition">Exceeds 1 month duration · Up to 3 months · Over <span class="uk-content">£150k</span><span class="us-content">$225k</span> total</div>
       <div class="opt-terms"><span class="opt-pct">50%</span> invoiced on signature · <span class="opt-pct">50%</span> invoiced when content goes live · Both payable within <strong>30 days</strong></div>
     </div>
     <div class="payment-card">
       <div class="opt-label">OPTION 3</div>
-      <div class="opt-condition">Over £150k · Short live period (1–2 weeks)</div>
+      <div class="opt-condition">Over <span class="uk-content">£150k</span><span class="us-content">$225k</span> · Short live period (1–2 weeks)</div>
       <div class="opt-terms"><span class="opt-pct">100%</span> of total fee invoiced upon first live date, payable within <strong>30 days</strong></div>
     </div>
     <div class="payment-card">
       <div class="opt-label">OPTION 4</div>
-      <div class="opt-condition">Exceeds 3 months · Over £150k total</div>
+      <div class="opt-condition">Exceeds 3 months · Over <span class="uk-content">£150k</span><span class="us-content">$225k</span> total</div>
       <div class="opt-terms">Agree with <strong>Finance</strong> on best terms. Example: monthly payments with a <span class="opt-pct">%</span> invoiced on IO signature (e.g. Kalshi retainer model)</div>
     </div>
   </div>
@@ -2843,7 +2848,7 @@ Thank you for your attention to this matter. I look forward to our successful co
     </div>
     <div style="background:var(--c);border:1px solid var(--br);border-radius:10px;padding:13px 16px;display:flex;gap:14px;align-items:flex-start">
       <div style="width:28px;height:28px;border-radius:50%;background:var(--y);color:#000;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">4</div>
-      <div><div style="font-size:13px;font-weight:800;color:#fff">Use the data in your proposal</div><div style="font-size:12px;color:#aaa;margin-top:3px">Quote the overlap directly. <em style="color:#ccc">"Your audience is 68% 18–34 female — our Pubity UK page is 71% 18–34 female, so you'd be speaking directly to the people you want to reach."</em></div></div>
+      <div><div style="font-size:13px;font-weight:800;color:#fff">Use the data in your proposal</div><div style="font-size:12px;color:#aaa;margin-top:3px">Quote the overlap directly. <em style="color:#ccc">"Your audience is 68% 18–34 female — our Pubity page is 71% 18–34 female, so you'd be speaking directly to the people you want to reach."</em></div></div>
     </div>
     <div style="background:var(--c);border:1px solid var(--br);border-radius:10px;padding:13px 16px;display:flex;gap:14px;align-items:flex-start">
       <div style="width:28px;height:28px;border-radius:50%;background:var(--y);color:#000;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">5</div>
@@ -2928,12 +2933,12 @@ Thank you for your attention to this matter. I look forward to our successful co
 
   <div class="lbl-section">RATE CARDS & PRICING</div>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:24px">
-    <a href="https://docs.google.com/presentation/d/1_5VcfUS_SyyprHFAYX4pcoYI2h2ElvP2IQJfayQzNJo/edit?usp=sharing" target="_blank" style="background:var(--c);border:1px solid var(--br);border-radius:10px;padding:16px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:border-color .2s" onmouseover="this.style.borderColor='var(--y)'" onmouseout="this.style.borderColor='var(--br)'">
+    <a class="us-content" href="https://docs.google.com/presentation/d/1_5VcfUS_SyyprHFAYX4pcoYI2h2ElvP2IQJfayQzNJo/edit?usp=sharing" target="_blank" style="background:var(--c);border:1px solid var(--br);border-radius:10px;padding:16px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:border-color .2s" onmouseover="this.style.borderColor='var(--y)'" onmouseout="this.style.borderColor='var(--br)'">
       <span style="font-size:32px">💸</span>
       <div><div style="font-size:13px;font-weight:800;color:#fff">US Amplification Rate Card</div><div style="font-size:11px;color:#888;margin-top:3px;line-height:1.4">USD pricing for Amplification campaigns. Always use the current version — never quote CPMs from memory.</div></div>
       <span style="font-size:10px;color:var(--y);font-weight:700">Google Slides ↗</span>
     </a>
-    <div style="background:#111;border:1px dashed #555;border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:10px">
+    <div class="uk-content" style="background:#111;border:1px dashed #555;border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:10px">
       <span style="font-size:32px">💸</span>
       <div><div style="font-size:13px;font-weight:800;color:#888">UK Rate Card</div><div style="font-size:11px;color:#666;margin-top:3px;line-height:1.4">Ask Rachel for the latest version — check the Key Documents Slack canvas for the current link</div></div>
       <span style="font-size:10px;color:#666;font-weight:700">Ask Rachel ↗</span>
@@ -3047,7 +3052,7 @@ Thank you for your attention to this matter. I look forward to our successful co
   </div>
 
   <div class="card" id="proc-presale-under" onclick="toggleCard('proc-presale-under','var(--y)')">
-    <div class="card-head"><div><div style="font-weight:800;font-size:14px;color:#ddd">📋 Pre-Sale Process — Under £150K</div><div style="font-size:12px;color:var(--m);margin-top:2px">Standard process for deals below the £150K threshold</div></div><span class="toggle">▼</span></div>
+    <div class="card-head"><div><div style="font-weight:800;font-size:14px;color:#ddd">📋 Pre-Sale Process — Under <span class="uk-content">£150K</span><span class="us-content">$225K</span></div><div style="font-size:12px;color:var(--m);margin-top:2px">Standard process for deals below the <span class="uk-content">£150K</span><span class="us-content">$225K</span> threshold</div></div><span class="toggle">▼</span></div>
     <div class="card-body">
       <ul style="font-size:14px;color:#ccc;line-height:1.8;padding-left:18px">
         <li>Solutions team to forefront the response</li>
@@ -3076,7 +3081,7 @@ Thank you for your attention to this matter. I look forward to our successful co
     <div class="card-body">
       <ul style="font-size:14px;color:#ccc;line-height:1.8;padding-left:18px">
         <li>Focus on amplification</li>
-        <li>For deals under £150K — join if custom elements are involved</li>
+        <li>For deals under <span class="uk-content">£150K</span><span class="us-content">$225K</span> — join if custom elements are involved</li>
       </ul>
     </div>
   </div>
@@ -3115,7 +3120,7 @@ Thank you for your attention to this matter. I look forward to our successful co
         <li>Evaluate: turnaround time, soft costs, strategic value, new vertical entry</li>
         <li>Review CRM history before accepting</li>
         <li>Encourage Sales to push back when budget doesn't meet objectives</li>
-        <li>Example: Apple £150K — declined as it wouldn't meet objectives</li>
+        <li>Example: Apple <span class="uk-content">£150K</span><span class="us-content">$225K</span> — declined as it wouldn't meet objectives</li>
         <li>Long-term strategic partnerships > short-term revenue</li>
       </ul>
     </div>
@@ -3753,14 +3758,14 @@ Thank you for your attention to this matter. I look forward to our successful co
       <div class="doc-card-name">IO & CSA Process</div>
       <div class="doc-card-desc">Full IO and CSA walkthrough</div>
     </a>
-    <a class="doc-card" href="https://pubitygroup.slack.com/files/U0AF79Q5SR4/F0A7FDPKVC1/pubity_group_-_new_customer_form_2025.docx" target="_blank">
+    <a class="doc-card uk-content" href="https://pubitygroup.slack.com/files/U0AF79Q5SR4/F0A7FDPKVC1/pubity_group_-_new_customer_form_2025.docx" target="_blank">
       <span class="doc-card-arrow">↗</span>
       <div class="doc-card-icon">🇬🇧</div>
       <div class="doc-card-type">DOCUMENT</div>
       <div class="doc-card-name">UK New Customer Form</div>
       <div class="doc-card-desc">NCF for UK clients</div>
     </a>
-    <a class="doc-card" href="https://pubitygroup.slack.com/files/U0AF79Q5SR4/F0AH6C989DH/pubtiy_group_-_new_customer_form_2026_us.docx" target="_blank">
+    <a class="doc-card us-content" href="https://pubitygroup.slack.com/files/U0AF79Q5SR4/F0AH6C989DH/pubtiy_group_-_new_customer_form_2026_us.docx" target="_blank">
       <span class="doc-card-arrow">↗</span>
       <div class="doc-card-icon">🇺🇸</div>
       <div class="doc-card-type">DOCUMENT</div>
@@ -5097,7 +5102,7 @@ const SALES=[
    insight:'The Springboard is not admin — it\'s your only chance to give the creative team everything they need.',
    detail:[
     {h:'What the Springboard is',b:'Monday.com form that kicks off creative. Do not brief verbally or via Slack.'},
-    {h:'Who picks it up',b:'Under £250k: Josiah Campbell (Solutions). Over £250k: Karen Lew (Strategy).'},
+    {h:'Who picks it up',b:'Under <span class="uk-content">£250k</span><span class="us-content">$375k</span>: Josiah Campbell (Solutions). Over <span class="uk-content">£250k</span><span class="us-content">$375k</span>: Karen Lew (Strategy).'},
     {h:'Restricted categories',b:'Alcohol, crypto, health/medical, betting, beauty surgery, CBD, supplements, energy drinks — all need Alex Giacon sign-off first.'},
    ],
    links:[['Campaign Briefing Springboard','https://forms.monday.com/forms/1bf181f23ce93bc765a452aa0a944e6f?r=euc1']],
@@ -5116,7 +5121,7 @@ const SALES=[
    insight:'Everything after "yes" is admin — but admin done well prevents 50% of problems downstream.',
    detail:[
     {h:'Step 1: Open the Slack channel',b:'Naming: DealNumber_Brand-Name_Project-Location_Year'},
-    {h:'Step 2: Invite the team',b:'Rachel (always), CS contact, Josiah, Will. Over £250k: Alex Giacon.'},
+    {h:'Step 2: Invite the team',b:'Rachel (always), CS contact, Josiah, Will. Over <span class="uk-content">£250k</span><span class="us-content">$375k</span>: Alex Giacon.'},
     {h:'Step 3: Send IO and NCF',b:'IO and NCF go together for new billing entities. Seb signs all contracts.'},
    ],
    links:[['SharePoint Commercial Hub','https://pubitypgl.sharepoint.com/sites/Pubity/Shared%20Documents/Brand%20Partnerships%20Hub'],['Monday Deliverables Tracker','https://pubitygroup.monday.com/boards/1214765329/views/32786570']],
@@ -5134,7 +5139,7 @@ const SALES=[
    summary:'🏆 CS produces wrap report. You attend and start the renewal conversation.',
    insight:'"Build the $4M renewal conversation from day one."',
    detail:[
-    {h:'PCA wrap report tiers',b:'Under £100k = one pager. £101–125k = mini wrap. £125k+ = standard.'},
+    {h:'PCA wrap report tiers',b:'Under <span class="uk-content">£100k</span><span class="us-content">$150k</span> = one pager. <span class="uk-content">£101–125k</span><span class="us-content">$150–200k</span> = mini wrap. <span class="uk-content">£125k+</span><span class="us-content">$200k+</span> = standard.'},
     {h:'When to start renewal',b:'During the PCA presentation. Results are fresh. Client is happy. Plant the seed.'},
    ],
    links:[['Case Study Database','https://docs.google.com/spreadsheets/d/1_uR6wYU6yjVoA7fDZ8I9csB7jIJoBj0a-lf4WbbRULM/edit?gid=1509807453']],
@@ -5188,10 +5193,10 @@ const CS_PHASES=[
   ]},
   {phase:'LIVE',color:'#FF6600',steps:[
     {label:'Content Goes Live',who:'CS + Studio',detail:'Posts go live across agreed pages. Max 2 commercial posts/day/page.'},
-    {label:'Performance Monitoring',who:'CS Team',detail:'Real-time tracking. Paid spend managed if underdelivery risk (£250/post + 5%).'},
+    {label:'Performance Monitoring',who:'CS Team',detail:'Real-time tracking. Paid spend managed if underdelivery risk (<span class="uk-content">£250</span><span class="us-content">$375</span>/post + 5%).'},
   ]},
   {phase:'POST-LIVE',color:'#E05C00',steps:[
-    {label:'Wrap Report (PCA)',who:'CS Team',detail:'<£100k = one pager. £101–125k = mini wrap. £125k+ = standard. Sent 5–7 days after delivery.'},
+    {label:'Wrap Report (PCA)',who:'CS Team',detail:'Under <span class="uk-content">£100k</span><span class="us-content">$150k</span> = one pager. <span class="uk-content">£101–125k</span><span class="us-content">$150–200k</span> = mini wrap. <span class="uk-content">£125k+</span><span class="us-content">$200k+</span> = standard. Sent 5–7 days after delivery.'},
     {label:'Brand Lift Study',who:'This That (3rd party)',detail:'Large deals only. Measures brand awareness shift. Results take 4–6 weeks.'},
   ]},
   {phase:'RENEWAL',color:'#28A745',steps:[
@@ -5320,7 +5325,7 @@ const OBJS=[
    bridge:[
     {icon:'✋',label:'Acknowledge',text:'Certainty matters — especially with finance sign-off.'},
     {icon:'🔄',label:'Reframe',text:'We use real page benchmarks updated quarterly. Not guesses.'},
-    {icon:'🛡️',label:'Protect',text:'Can pad with paid spend via Hugo Walker (£250/post + 5%). Guarantee void if client overrides creative.'},
+    {icon:'🛡️',label:'Protect',text:'Can pad with paid spend via Hugo Walker (<span class="uk-content">£250</span><span class="us-content">$375</span>/post + 5%). Guarantee void if client overrides creative.'},
    ],
    a:'We offer estimated impressions based on real page benchmarks, updated quarterly. We can pad with paid spend via Hugo Walker to protect against underdelivery. But if a client rejects our creative recommendations, the guarantee becomes void (in the IO).'},
   {q:'"We\'ve never heard of Pubity."',
@@ -5356,8 +5361,8 @@ const TEAM=[
   {dept:'LEADERSHIP',name:'Kit Chilvers',role:'Co-founder & CEO',go:'Overall company direction and major strategic decisions.'},
   {dept:'LEADERSHIP',name:'Iyrah Williams',role:'Chief Content Officer',go:'Content strategy and editorial direction across all pages.'},
   // VP COMMERCIAL & STUDIO
-  {dept:'VP COMMERCIAL & STUDIO',name:'Seb Rossi',role:'VP Commercial',go:'Strategy sign-off. Loop in for strategic clients or deals over £250k.'},
-  {dept:'VP COMMERCIAL & STUDIO',name:'Alex Giacon',role:'SVP, Studio',go:'Complex deal sign-off, escalations above £250k, restricted category approval.'},
+  {dept:'VP COMMERCIAL & STUDIO',name:'Seb Rossi',role:'VP Commercial',go:'Strategy sign-off. Loop in for strategic clients or deals over <span class="uk-content">£250k</span><span class="us-content">$375k</span>.'},
+  {dept:'VP COMMERCIAL & STUDIO',name:'Alex Giacon',role:'SVP, Studio',go:'Complex deal sign-off, escalations above <span class="uk-content">£250k</span><span class="us-content">$375k</span>, restricted category approval.'},
   // SALES
   {dept:'SALES',name:'Alexandra Greenwald',role:'Head of Industry, Brand Partnerships',go:'Industry strategy and senior brand partnership development. US market.'},
   {dept:'SALES',name:'Nina Kammer',role:'Head of Industry, Brand Partnerships',go:'Industry strategy and senior brand partnership development. US market.'},
@@ -5433,7 +5438,7 @@ function checkAnswer(qi,ai){
 // ── CHECKLIST ──
 const CHECKS={
   day1:['Read the Welcome Deck','Get Slack access & join all channels','Book intro meetings (Rachel, Alex S, Seb)','Sort laptop setup via #it-help','Profile picture + job description setup with Hugo E','Join WhatsApp group chat','Pubity Self-Service walkthrough','Deal Manager intro','HiBob setup — all deals + sign policies','IT training + People training'],
-  products:['Can describe all 3 products in one sentence each','Can name all 15 pages with follower counts','Know UK minimum budget for each product','Completed HubSpot training with Rachel','Completed Monday.com training with Rachel'],
+  products:['Can describe all 3 products in one sentence each','Can name all 15 pages with follower counts','Know minimum budget for each product in your market','Completed HubSpot training with Rachel','Completed Monday.com training with Rachel'],
   casestudies:['Know 5+ case studies from memory','Know answer to "why Pubity over an influencer?"','Case Study Finder bookmarked','Know which 2 studies to lead with for entertainment clients'],
   sales:['Can explain full deal lifecycle without notes','Shadowed Alex S on at least one client call','Attended daily stand-up every day this week','Submitted at least one Springboard brief','60-second opener practised out loud 3+ times','Know responses to all 5 objections'],
   tools:['HubSpot access confirmed','Monday.com — Deliverables Tracker & Content Calendar','SharePoint Commercial Hub access','ZoomInfo connected to HubSpot','Media Radar access','Demographics Pro login obtained','Claude (AI) set up via Hugo','Outlook Calendar connected to Slack','Springboard Form bookmarked'],
@@ -5650,9 +5655,18 @@ function copyCommitmentEmail(btn){
 // ── REGION SELECTION ──
 let selectedRegion=localStorage.getItem('pg-seller-region')||null;
 
+function updateRegionBadge(){
+  const badge=document.getElementById('region-badge');
+  if(!badge)return;
+  badge.innerHTML=selectedRegion==='uk'?'🇬🇧 UK':'🇺🇸 US';
+}
+
 function selectRegion(region){
   selectedRegion=region;
   localStorage.setItem('pg-seller-region',region);
+  document.body.className=document.body.className.replace(/region-\w+/g,'').trim();
+  document.body.classList.add('region-'+region);
+  updateRegionBadge();
   const landing=document.getElementById('landing');
   const app=document.getElementById('main-app');
   landing.classList.add('hidden');
@@ -5660,6 +5674,15 @@ function selectRegion(region){
     landing.style.display='none';
     app.classList.add('visible');
   },500);
+}
+
+function switchRegion(){
+  const newRegion=selectedRegion==='uk'?'us':'uk';
+  selectedRegion=newRegion;
+  localStorage.setItem('pg-seller-region',newRegion);
+  document.body.className=document.body.className.replace(/region-\w+/g,'').trim();
+  document.body.classList.add('region-'+newRegion);
+  updateRegionBadge();
 }
 
 function checkSavedRegion(){
@@ -5670,6 +5693,8 @@ function checkSavedRegion(){
     landing.style.display='none';
     app.classList.add('visible');
     selectedRegion=saved;
+    document.body.classList.add('region-'+saved);
+    updateRegionBadge();
   }
 }
 
