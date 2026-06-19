@@ -10,8 +10,13 @@
     --y:#FFD700;--b:#0A0A0A;--d:#141414;--c:#1A1A1A;--br:#2A2A2A;--m:#888;
     --g:#28A745;--o:#FF9900;--r:#E74C3C;--blue:#4A9EFF;
     --uk:#1e40af;--us:#0369a1;
+    --text:#fff;--text-secondary:#ccc;--text-dim:#aaa;--bg-elevated:#111;--bg-input:#0d0d0d;
   }
-  body{background:var(--b);color:#fff;font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh}
+  body.light-mode{
+    --y:#B8960F;--b:#F5F5F5;--d:#FFFFFF;--c:#FFFFFF;--br:#E0E0E0;--m:#666;
+    --text:#1a1a1a;--text-secondary:#333;--text-dim:#555;--bg-elevated:#f0f0f0;--bg-input:#fff;
+  }
+  body{background:var(--b);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;transition:background .3s,color .3s}
   a{color:var(--y);text-decoration:none}
   a:hover{text-decoration:underline}
 
@@ -369,6 +374,125 @@
     .pages-row{grid-template-columns:1fr 80px 80px;font-size:11px}
     .subnav{flex-wrap:wrap}
   }
+
+  /* ── LIGHT MODE OVERRIDES ── */
+  body.light-mode a{color:#996F00}
+  body.light-mode a:hover{color:#7A5900}
+  body.light-mode #header{background:var(--d);border-bottom-color:var(--y)}
+  body.light-mode #progress-bar-wrap{background:#e8e8e8;border-color:var(--br)}
+  body.light-mode #pb-track{background:#d0d0d0}
+  body.light-mode #pb-pct{color:var(--y)}
+  body.light-mode .tab-btn{color:#666;border-color:var(--br)}
+  body.light-mode .tab-btn.active{background:var(--y);color:#fff;border-color:var(--y);box-shadow:0 2px 8px rgba(184,150,15,.25)}
+  body.light-mode .tab-btn:hover:not(.active){color:#333;border-color:#bbb}
+  body.light-mode .card{background:var(--c);border-color:var(--br);box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  body.light-mode .card:hover{box-shadow:0 2px 12px rgba(0,0,0,.1)}
+  body.light-mode .card.open{border-color:var(--y)}
+  body.light-mode .card-head .toggle{color:var(--m)}
+  body.light-mode .tl-content{background:var(--c);border-color:var(--br)}
+  body.light-mode .tl-tasks{color:var(--m)}
+  body.light-mode .step-card{background:var(--c)}
+  body.light-mode .step-card.open{background:#f8f8f8}
+  body.light-mode .step-para{color:var(--text-secondary)}
+  body.light-mode .step-summary{color:#777}
+  body.light-mode .mistake-box{background:#f9f6e7;border-left-color:var(--y)}
+  body.light-mode .mistake-box p{color:var(--text-secondary)}
+  body.light-mode .when-box{background:#faf8e8;border-left-color:var(--y)}
+  body.light-mode .when-box p{color:var(--text-secondary)}
+  body.light-mode .obj-answer{background:#f9f6e7;border-left-color:var(--y)}
+  body.light-mode .obj-answer p{color:var(--text-secondary)}
+  body.light-mode .opener-box{background:#faf8e8;border-color:var(--y)}
+  body.light-mode .opener-box p{color:var(--text-secondary)}
+  body.light-mode .product-card{background:var(--c);border-color:var(--br)}
+  body.light-mode .product-card:hover{border-color:#bbb;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+  body.light-mode .product-desc{color:#666}
+  body.light-mode .stat-tile{background:#f0f0f0;border-color:var(--br);color:var(--y)}
+  body.light-mode .stat-big-tile{background:#f0f0f0;border-color:var(--br)}
+  body.light-mode .stat-big-tile:hover{border-color:#bbb;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+  body.light-mode .stat-big-label{color:#777}
+  body.light-mode .stat-kpi-bar{background:#ddd}
+  body.light-mode .team-row{background:var(--c);border-color:var(--br)}
+  body.light-mode .team-go{color:#555}
+  body.light-mode .team-role{color:var(--y)}
+  body.light-mode .cl-section{background:var(--c);border-color:var(--br)}
+  body.light-mode .cl-label{color:var(--text-secondary)}
+  body.light-mode .cl-label.done{color:var(--m)}
+  body.light-mode .cl-box{border-color:#bbb}
+  body.light-mode .cl-box.done{background:var(--y);border-color:var(--y)}
+  body.light-mode .chip{background:#eee;border-color:#ccc;color:#555}
+  body.light-mode .chip:hover{border-color:var(--y);color:var(--y)}
+  body.light-mode textarea{background:var(--bg-input);border-color:var(--br);color:var(--text-secondary)}
+  body.light-mode textarea:focus{border-color:#999}
+  body.light-mode .subnav-btn{background:var(--c);color:#666;border-color:var(--br)}
+  body.light-mode .subnav-btn.active{background:var(--y);color:#fff;border-color:var(--y)}
+  body.light-mode .subnav-btn:hover:not(.active){color:#333;border-color:#bbb}
+  body.light-mode .lbl-section{color:var(--y)}
+  body.light-mode .comp-table th{background:#f0f0f0;border-color:var(--br);color:var(--y)}
+  body.light-mode .comp-table td{border-color:var(--br);color:var(--text-secondary)}
+  body.light-mode .comp-table tr:hover{background:#f8f8f8}
+  body.light-mode .pages-row{border-bottom-color:var(--br)}
+  body.light-mode .pages-row.hdr{background:#f0f0f0;color:var(--y)}
+  body.light-mode .pages-table{background:var(--c);border-color:var(--br)}
+  body.light-mode .doc-card{background:#fafafa;border-color:#e0e0e0;color:var(--text-secondary)}
+  body.light-mode .doc-card:hover{border-color:var(--y);background:#fdf9e7;color:var(--text)}
+  body.light-mode .doc-card-name{color:#333}
+  body.light-mode .doc-card:hover .doc-card-name{color:#1a1a1a}
+  body.light-mode .doc-card-desc{color:#888}
+  body.light-mode .doc-card:hover .doc-card-desc{color:#666}
+  body.light-mode .doc-card-type{color:#999}
+  body.light-mode .doc-card-arrow{color:#ccc}
+  body.light-mode .doc-card:hover .doc-card-arrow{color:var(--y)}
+  body.light-mode .flow-diagram{background:#f0f0f0;border-color:var(--br)}
+  body.light-mode .flow-step{background:var(--c);border-color:var(--br)}
+  body.light-mode .warning-box{background:#fdf9e7;border-color:var(--y)}
+  body.light-mode .kc-box{background:#f0f0f0;border-color:var(--br)}
+  body.light-mode .kc-opt{background:var(--c);border-color:var(--br);color:var(--text-secondary)}
+  body.light-mode .kc-opt:hover{border-color:var(--y);color:var(--y)}
+  body.light-mode .kc-reveal{background:#f8f8f8;color:var(--m)}
+  body.light-mode .wk-section{background:var(--c);border-color:var(--br)}
+  body.light-mode .wk-label{color:var(--text-secondary)}
+  body.light-mode .wk-label.done{color:var(--m)}
+  body.light-mode .wk-box{border-color:#bbb}
+  body.light-mode .wk-box.done{background:var(--y);border-color:var(--y)}
+  body.light-mode .wk-sub{color:var(--m)}
+  body.light-mode .io-card{background:var(--c);border-color:var(--br)}
+  body.light-mode .io-card.open{border-color:var(--y)}
+  body.light-mode .io-step-text{color:var(--text-secondary)}
+  body.light-mode .payment-card{background:var(--c);border-color:var(--br)}
+  body.light-mode .payment-card .opt-condition{color:var(--m)}
+  body.light-mode .payment-card .opt-terms{color:var(--text-secondary)}
+  body.light-mode .cs-flow-diagram{background:#f0f0f0}
+  body.light-mode .cs-flow-node{background:#fff;border-color:#ddd;color:#555}
+  body.light-mode .cs-resources{background:#fdf9e7;border-color:var(--y)}
+  body.light-mode .er-box{background:#fdf9e7;border-color:rgba(184,150,15,.3)}
+  body.light-mode .ct-table th{background:#f0f0f0;border-color:var(--br);color:var(--y)}
+  body.light-mode .ct-table td{border-color:var(--br);color:var(--text-secondary)}
+  body.light-mode .ct-table tr:hover{background:#f8f8f8}
+  body.light-mode .ct-scroll{border-color:var(--br)}
+  body.light-mode .ct-edit{background:var(--bg-input);border-color:var(--br);color:var(--text-secondary)}
+  body.light-mode .hd-diagram{background:#f0f0f0;border-color:var(--br)}
+  body.light-mode .hd-box{fill:#fff;stroke:var(--y)}
+  body.light-mode .hd-box-green{fill:#fff;stroke:#28A745}
+  body.light-mode .hd-box-orange{fill:#fff;stroke:#FF9900}
+  body.light-mode .hd-box-red{fill:#fff;stroke:#E74C3C}
+  body.light-mode .hd-box-blue{fill:#fff;stroke:#4A9EFF}
+  body.light-mode .hd-text{fill:var(--text)}
+  body.light-mode .hd-text-sm{fill:#888}
+  body.light-mode .tl-dot{box-shadow:0 0 0 4px var(--b)}
+  body.light-mode footer{border-top-color:var(--br);color:var(--m)}
+  body.light-mode .sh p{color:var(--m)}
+  body.light-mode .tag{background:#eee;border-color:#ddd;color:#666}
+  body.light-mode #back-to-top{background:var(--y);color:#fff;box-shadow:0 4px 16px rgba(0,0,0,.15)}
+  body.light-mode #back-to-top:hover{background:#d4aa0f}
+  body.light-mode #landing{background:var(--b)}
+  body.light-mode .landing-card{background:var(--c);border-color:var(--br)}
+  body.light-mode .landing-card:hover{border-color:var(--y);box-shadow:0 8px 32px rgba(184,150,15,.12)}
+  body.light-mode .landing-sub{color:var(--m)}
+  body.light-mode .landing-logo{background:var(--y);box-shadow:0 0 40px rgba(184,150,15,.15)}
+  body.light-mode .region-sub{color:var(--m)}
+  body.light-mode #theme-toggle{background:none;border-color:var(--br);color:var(--m)}
+  body.light-mode #theme-toggle:hover{border-color:var(--y)}
+  body.light-mode .crm-explain{color:var(--text-secondary)}
 </style>
 </head>
 <body>
@@ -414,6 +538,7 @@
       </div>
     </div>
     <div style="display:flex;align-items:center;gap:12px">
+      <button id="theme-toggle" onclick="toggleTheme()" style="background:none;border:1px solid var(--br);border-radius:6px;padding:3px 10px;font-size:11px;font-weight:700;color:var(--m);cursor:pointer;font-family:inherit;white-space:nowrap;transition:border-color .2s" onmouseover="this.style.borderColor='var(--y)'" onmouseout="this.style.borderColor='var(--br)'" title="Toggle light/dark mode">🌙 Dark</button>
       <button id="region-badge" onclick="switchRegion()" style="background:none;border:1px solid var(--br);border-radius:6px;padding:3px 10px;font-size:11px;font-weight:700;color:var(--m);cursor:pointer;font-family:inherit;white-space:nowrap;transition:border-color .2s" onmouseover="this.style.borderColor='var(--y)'" onmouseout="this.style.borderColor='var(--br)'" title="Click to switch region">🇬🇧 UK</button>
       <div id="progress-bar-wrap">
         <div id="pb-track"><div id="pb-fill"></div></div>
@@ -3425,8 +3550,52 @@ Thank you for your attention to this matter. I look forward to our successful co
 <div id="tab-dochub" class="tab-pane active">
   <div class="sh"><h2>📄 Documents Hub</h2><p>All key documents, templates, and tools in one place. Sourced from the <a href="https://pubitygroup.slack.com/docs/T020METK554/F0ALMFFUWAE" target="_blank">Commercial Hub Canvas</a>.</p></div>
 
+  <!-- QUICK LINKS -->
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px">
+    <a href="#dh-crm" class="chip" style="font-size:12px;padding:6px 14px">🔗 CRM</a>
+    <a href="#dh-creds" class="chip" style="font-size:12px;padding:6px 14px">🎨 Credentials & Pitch</a>
+    <a href="#dh-deals" class="chip" style="font-size:12px;padding:6px 14px">🚀 Deal Creation</a>
+    <a href="#dh-sharepoint" class="chip" style="font-size:12px;padding:6px 14px">🗂️ SharePoint & Files</a>
+    <a href="#dh-legal" class="chip" style="font-size:12px;padding:6px 14px">⚖️ Legal & Contracts</a>
+    <a href="#dh-tracking" class="chip" style="font-size:12px;padding:6px 14px">📈 Tracking & Data</a>
+    <a href="#dh-updates" class="chip" style="font-size:12px;padding:6px 14px">📝 Updates & Planning</a>
+    <a href="#dh-audience" class="chip" style="font-size:12px;padding:6px 14px">🔍 Audience & Insights</a>
+    <a href="#dh-procedures" class="chip" style="font-size:12px;padding:6px 14px">⚙️ Procedures</a>
+    <a href="#dh-competitor" class="chip" style="font-size:12px;padding:6px 14px">🔬 Competitor Intel</a>
+  </div>
+
+  <!-- CRM -->
+  <div id="dh-crm" class="lbl-section">🔗 CRM</div>
+  <div style="background:var(--bg-elevated);border:1px solid var(--br);border-radius:10px;padding:14px 18px;margin-bottom:16px;display:flex;gap:12px;align-items:flex-start">
+    <span style="font-size:18px;flex-shrink:0">💡</span>
+    <div class="crm-explain" style="font-size:13px;line-height:1.7"><strong style="color:var(--y)">How our CRM works:</strong> All CRM data entry goes through <strong>Deal Manager</strong> — this is where you create and manage deals. <strong>HubSpot</strong> is the backend of our CRM; use it for pulling reports, tracking your pipeline, and running outreach <strong>Sequences</strong>.</div>
+  </div>
+  <div class="doc-cards" style="margin-bottom:24px">
+    <a class="doc-card" href="https://deals.pubitypgl.com/deals" target="_blank" style="border-color:var(--y)">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📝</div>
+      <div class="doc-card-type">DEAL MANAGER</div>
+      <div class="doc-card-name">Deal Manager</div>
+      <div class="doc-card-desc">All CRM data entry goes through here — create, edit, and manage deals</div>
+    </a>
+    <a class="doc-card" href="https://app-eu1.hubspot.com/contacts/143333975/objects/0-3/views/150040459/list" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">🔗</div>
+      <div class="doc-card-type">CRM</div>
+      <div class="doc-card-name">HubSpot</div>
+      <div class="doc-card-desc">Backend of our CRM — pull reports, track your pipeline, manage contacts</div>
+    </a>
+    <a class="doc-card" href="https://app-eu1.hubspot.com/sequences/143333975" target="_blank">
+      <span class="doc-card-arrow">↗</span>
+      <div class="doc-card-icon">📧</div>
+      <div class="doc-card-type">HUBSPOT</div>
+      <div class="doc-card-name">HubSpot Sequences</div>
+      <div class="doc-card-desc">Automated email outreach sequences for prospecting</div>
+    </a>
+  </div>
+
   <!-- CREDS DECK -->
-  <div class="lbl-section">🎨 CREDENTIALS & PITCH</div>
+  <div id="dh-creds" class="lbl-section">🎨 CREDENTIALS & PITCH</div>
   <div class="doc-cards" style="margin-bottom:24px">
     <a class="doc-card" href="https://canva.link/pn8lpd8sbf0l2fm" target="_blank" style="border-color:var(--y)">
       <span class="doc-card-arrow">↗</span>
@@ -3459,7 +3628,7 @@ Thank you for your attention to this matter. I look forward to our successful co
   </div>
 
   <!-- DEAL CREATION & CAMPAIGN SETUP -->
-  <div class="lbl-section">🚀 DEAL CREATION & CAMPAIGN SETUP</div>
+  <div id="dh-deals" class="lbl-section">🚀 DEAL CREATION & CAMPAIGN SETUP</div>
   <div style="background:#111;border:1px solid var(--br);border-radius:10px;padding:14px 18px;margin-bottom:16px;display:flex;gap:12px;align-items:flex-start">
     <span style="font-size:18px;flex-shrink:0">💡</span>
     <div style="font-size:13px;color:#ccc;line-height:1.7"><strong style="color:var(--y)">How deals work:</strong> Create all new deals in <a href="https://deals.pubitypgl.com/create" target="_blank">Deal Manager</a>. Once submitted, a <strong style="color:#fff">Slack channel</strong> and <strong style="color:#fff">SharePoint folder</strong> are automatically created for the campaign. Use <a href="https://app.hubspot.com" target="_blank">HubSpot</a> to track and update deals through the pipeline.</div>
@@ -3510,7 +3679,7 @@ Thank you for your attention to this matter. I look forward to our successful co
   </div>
 
   <!-- SHAREPOINT & FILES -->
-  <div class="lbl-section">🗂️ SHAREPOINT & FILES</div>
+  <div id="dh-sharepoint" class="lbl-section">🗂️ SHAREPOINT & FILES</div>
   <div class="doc-cards" style="margin-bottom:24px">
     <a class="doc-card" href="https://pubitypgl.sharepoint.com/:f:/r/sites/Pubity/Shared%20Documents/Brand%20Partnerships%20Hub?csf=1&web=1&e=goOJSZ" target="_blank" style="border-color:var(--y)">
       <span class="doc-card-arrow">↗</span>
@@ -3536,7 +3705,7 @@ Thank you for your attention to this matter. I look forward to our successful co
   </div>
 
   <!-- LEGAL & CONTRACTS -->
-  <div class="lbl-section">⚖️ LEGAL & CONTRACTS</div>
+  <div id="dh-legal" class="lbl-section">⚖️ LEGAL & CONTRACTS</div>
   <div class="doc-cards" style="margin-bottom:24px">
     <a class="doc-card" href="https://pubitypgl.sharepoint.com/:x:/r/sites/Pubity/Shared%20Documents/Brand%20Partnerships%20Hub/Legal/Brand%20Partnerships/IOs%20%26%20Contracts/Amplification%20IO%20Template.xlsx?d=w3d46a11974844c9885f823c18dc6cf93&csf=1&web=1&e=BBZt8m" target="_blank">
       <span class="doc-card-arrow">↗</span>
@@ -3590,7 +3759,7 @@ Thank you for your attention to this matter. I look forward to our successful co
   </div>
 
   <!-- TRACKING & DATA -->
-  <div class="lbl-section">📈 TRACKING & DATA</div>
+  <div id="dh-tracking" class="lbl-section">📈 TRACKING & DATA</div>
   <div class="doc-cards" style="margin-bottom:24px">
     <a class="doc-card" href="https://pubitygroup.monday.com/boards/1214765329/views/32786570" target="_blank">
       <span class="doc-card-arrow">↗</span>
@@ -3623,7 +3792,7 @@ Thank you for your attention to this matter. I look forward to our successful co
   </div>
 
   <!-- UPDATES & PLANNING -->
-  <div class="lbl-section">📝 UPDATES & PLANNING</div>
+  <div id="dh-updates" class="lbl-section">📝 UPDATES & PLANNING</div>
   <div class="doc-cards" style="margin-bottom:24px">
     <a class="doc-card" href="https://docs.google.com/spreadsheets/d/1hnehE43QCC3fOtjw0LStBjICfGT9Jcbw61p1Q_gNqxs/edit?usp=sharing" target="_blank">
       <span class="doc-card-arrow">↗</span>
@@ -3642,7 +3811,7 @@ Thank you for your attention to this matter. I look forward to our successful co
   </div>
 
   <!-- AUDIENCE & INSIGHTS -->
-  <div class="lbl-section">🔍 AUDIENCE & INSIGHTS</div>
+  <div id="dh-audience" class="lbl-section">🔍 AUDIENCE & INSIGHTS</div>
   <div class="doc-cards" style="margin-bottom:24px">
     <a class="doc-card" href="https://www.demographicspro.com/dashboard" target="_blank">
       <span class="doc-card-arrow">↗</span>
@@ -3675,7 +3844,7 @@ Thank you for your attention to this matter. I look forward to our successful co
   </div>
 
   <!-- PROCEDURES & WORKFLOWS -->
-  <div class="lbl-section">⚙️ PROCEDURES & WORKFLOWS</div>
+  <div id="dh-procedures" class="lbl-section">⚙️ PROCEDURES & WORKFLOWS</div>
   <div class="doc-cards" style="margin-bottom:24px">
     <a class="doc-card" href="https://pubitygroup.slack.com/docs/T020METK554/F0AGV7GCFR9" target="_blank">
       <span class="doc-card-arrow">↗</span>
@@ -3730,7 +3899,7 @@ Thank you for your attention to this matter. I look forward to our successful co
 
 
   <!-- COMPETITOR & MARKET INTEL -->
-  <div class="lbl-section">🔬 COMPETITOR & MARKET INTEL</div>
+  <div id="dh-competitor" class="lbl-section">🔬 COMPETITOR & MARKET INTEL</div>
   <div class="doc-cards" style="margin-bottom:24px">
     <a class="doc-card" href="https://pubitygroup.slack.com/files/U0AF79Q5SR4/F0AN6E49C9W/pubity_competitor_analysis_sheet_.xlsx" target="_blank">
       <span class="doc-card-arrow">↗</span>
@@ -5493,8 +5662,29 @@ function checkSavedRegion(){
   }
 }
 
+// ── THEME ──
+function toggleTheme(){
+  const isLight=document.body.classList.toggle('light-mode');
+  localStorage.setItem('pg-theme',isLight?'light':'dark');
+  updateThemeButton();
+}
+function updateThemeButton(){
+  const btn=document.getElementById('theme-toggle');
+  if(!btn)return;
+  const isLight=document.body.classList.contains('light-mode');
+  btn.innerHTML=isLight?'☀️ Light':'🌙 Dark';
+}
+function checkSavedTheme(){
+  const saved=localStorage.getItem('pg-theme');
+  if(saved==='light'){
+    document.body.classList.add('light-mode');
+  }
+  updateThemeButton();
+}
+
 // ── INIT ──
 document.addEventListener('DOMContentLoaded',()=>{
+  checkSavedTheme();
   checkSavedRegion();
   renderSales();renderCS();renderCaseStudies();renderObjections();renderTeam();renderChecklist();renderKC();loadNotes();loadWkChecks();updateProgress();
 });
