@@ -430,7 +430,6 @@
     <button class="tab-btn" onclick="showTab('knowledge')">🧠 Knowledge Check</button>
     <button class="tab-btn" onclick="showTab('checklist')">✅ Checklist</button>
     <button class="tab-btn" onclick="showTab('io')">📄 IO & CSA (Reference)</button>
-    <button class="tab-btn" onclick="showTab('campaigns')">📋 Campaign Tracker</button>
     <button class="tab-btn" onclick="showTab('weekly')">📝 Weekly Checklist</button>
     <button class="tab-btn" onclick="showTab('wow')">⚙️ Ways of Working</button>
     <button class="tab-btn" onclick="showTab('demopro')">🔬 Demographics Pro</button>
@@ -2567,80 +2566,6 @@ Thank you for your attention to this matter. I look forward to our successful co
   </div>
 </div>
 
-<!-- ══ CAMPAIGN TRACKER ══ -->
-<div id="tab-campaigns" class="tab-pane">
-  <div class="sh"><h2>Campaign Billing & Invoice Tracker</h2><p>Live data from Monday.com · HubSpot links · SharePoint IO docs · Editable notes & priority. Line items: Rachel to check.</p></div>
-  <div class="doc-cards" style="margin-bottom:16px">
-    <a class="doc-card" href="https://pubitygroup.monday.com/boards/5092118433" target="_blank">
-      <span class="doc-card-arrow">↗</span>
-      <div class="doc-card-icon">📋</div>
-      <div class="doc-card-type">Monday Board</div>
-      <div class="doc-card-name">Campaign Billing Board</div>
-      <div class="doc-card-desc">Main billing & invoice tracker</div>
-    </a>
-    <a class="doc-card" href="https://pubitygroup.monday.com/boards/5089619640" target="_blank">
-      <span class="doc-card-arrow">↗</span>
-      <div class="doc-card-icon">📊</div>
-      <div class="doc-card-type">Monday Board</div>
-      <div class="doc-card-name">2026 Campaign Overview</div>
-      <div class="doc-card-desc">All live campaigns at a glance</div>
-    </a>
-    <a class="doc-card" href="https://pubitygroup.monday.com/boards/2116607244" target="_blank">
-      <span class="doc-card-arrow">↗</span>
-      <div class="doc-card-icon">💰</div>
-      <div class="doc-card-type">Monday Board</div>
-      <div class="doc-card-name">Invoicing Board</div>
-      <div class="doc-card-desc">Client invoice status tracking</div>
-    </a>
-    <a class="doc-card" href="https://app-eu1.hubspot.com/contacts/143333975" target="_blank">
-      <span class="doc-card-arrow">↗</span>
-      <div class="doc-card-icon">🔗</div>
-      <div class="doc-card-type">CRM</div>
-      <div class="doc-card-name">HubSpot Portal</div>
-      <div class="doc-card-desc">Deals, contacts & pipeline</div>
-    </a>
-    <a class="doc-card" href="https://pubitypgl.sharepoint.com/sites/Pubity/Shared%20Documents/Brand%20Partnerships%20Hub/Client%20Services/Signed%20Insertion%20Orders" target="_blank">
-      <span class="doc-card-arrow">↗</span>
-      <div class="doc-card-icon">📁</div>
-      <div class="doc-card-type">SharePoint Folder</div>
-      <div class="doc-card-name">Signed IOs</div>
-      <div class="doc-card-desc">All signed insertion orders</div>
-    </a>
-    <a class="doc-card" href="https://pubitypgl.sharepoint.com/sites/Pubity/Shared%20Documents/Brand%20Partnerships%20Hub/Legal/Brand%20Partnerships/IOs%20%26%20Contracts" target="_blank">
-      <span class="doc-card-arrow">↗</span>
-      <div class="doc-card-icon">📁</div>
-      <div class="doc-card-type">SharePoint Folder</div>
-      <div class="doc-card-name">IO Templates</div>
-      <div class="doc-card-desc">IO & contract template library</div>
-    </a>
-    <a class="doc-card" href="https://pubitygroup.slack.com/archives/C08PQH2SQS3" target="_blank">
-      <span class="doc-card-arrow">↗</span>
-      <div class="doc-card-icon">💬</div>
-      <div class="doc-card-type">Slack Channel</div>
-      <div class="doc-card-name">#campaign-invoicing</div>
-      <div class="doc-card-desc">Invoicing queries & updates</div>
-    </a>
-  </div>
-  <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
-    <button class="subnav-btn active" onclick="filterCampaigns('all',this)">All</button>
-    <button class="subnav-btn" onclick="filterCampaigns('critical',this)">Critical</button>
-    <button class="subnav-btn" onclick="filterCampaigns('high',this)">High</button>
-    <button class="subnav-btn" onclick="filterCampaigns('low',this)">Low</button>
-  </div>
-  <div class="ct-scroll" id="campaign-table-wrap"></div>
-  <div class="note-wrap" style="margin-top:16px"><div class="note-lbl">📝 CAMPAIGN TRACKER NOTES</div><textarea placeholder="General campaign / billing notes..." onchange="saveNote('ct-general',this.value)" id="note-ct-general"></textarea></div>
-  <!-- SEB FEEDBACK -->
-  <div style="border-top:2px solid #FFD700;margin-top:32px;padding-top:24px">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
-      <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#FFD700,#FF9900);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#000;flex-shrink:0">S</div>
-      <div>
-        <div style="font-size:14px;font-weight:900;color:#FFD700">Seb's Feedback</div>
-        <div style="font-size:11px;color:#666">Manager notes & coaching points for this section</div>
-      </div>
-    </div>
-    <textarea style="width:100%;min-height:100px;background:#111;border:1px solid #FFD70044;border-radius:10px;padding:14px;color:#ccc;font-size:13px;line-height:1.7;font-family:inherit;resize:vertical" placeholder="Seb — leave feedback, coaching points, or priorities for this section..." onchange="localStorage.setItem('seb-campaigns',this.value)" id="seb-campaigns"></textarea>
-  </div>
-</div>
 
 <!-- ══ WEEKLY SELLER CHECKLIST ══ -->
 <div id="tab-weekly" class="tab-pane">
@@ -5776,7 +5701,7 @@ function checkSavedRegion(){
 // ── INIT ──
 document.addEventListener('DOMContentLoaded',()=>{
   checkSavedRegion();
-  renderSales();renderCS();renderCaseStudies();renderObjections();renderTeam();renderChecklist();renderKC();renderCampaigns();loadNotes();loadWkChecks();loadSebFeedback();updateProgress();
+  renderSales();renderCS();renderCaseStudies();renderObjections();renderTeam();renderChecklist();renderKC();loadNotes();loadWkChecks();loadSebFeedback();updateProgress();
 });
 </script>
 
